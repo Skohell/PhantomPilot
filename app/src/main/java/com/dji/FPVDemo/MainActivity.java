@@ -14,9 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import dji.common.camera.CameraSystemState;
 import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
+import dji.common.flightcontroller.DJIFlightControllerDataType;
+import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
 import dji.common.product.Model;
 import dji.common.util.DJICommonCallbacks;
 import dji.sdk.camera.DJICamera;
@@ -27,17 +32,41 @@ import dji.sdk.base.DJIBaseProduct;
 
 public class MainActivity extends Activity implements SurfaceTextureListener,OnClickListener{
 
-    private static final String TAG = MainActivity.class.getName();
-    protected DJICamera.CameraReceivedVideoDataCallback mReceivedVideoDataCallBack = null;
 
-    // Codec for video live view
-    protected DJICodecManager mCodecManager = null;
-
+    /* ------------------------------ ELEMENTS GRAPHIQUES ------------------------------*/
+    // Retour vidéo
     protected TextureView mVideoSurface = null;
+
+    // Médias
     private Button mCaptureBtn, mShootPhotoModeBtn, mRecordVideoModeBtn;
     private ToggleButton mRecordBtn;
     private TextView recordingTime;
 
+    //Joysticks
+    private OnScreenJoystick mScreenJoystickRight;
+    private OnScreenJoystick mScreenJoystickLeft;
+
+    /* --------------------------------------------------------------------------------*/
+
+    /* ------------------------------- ATTRIBUTS ------------------------------------- */
+
+    private static final String TAG = MainActivity.class.getName();
+
+    protected DJICamera.CameraReceivedVideoDataCallback mReceivedVideoDataCallBack = null;
+
+    // Codec pour la vidéo
+    protected DJICodecManager mCodecManager = null;
+
+    // Informations des joysticks
+    private float mPitch;
+    private float mRoll;
+    private float mYaw;
+    private float mThrottle;
+
+    private Timer mSendVirtualStickDataTimer;
+    private SendVirtualStickDataTask mSendVirtualStickDataTask;
+
+    /* ----------------------------------------------------------------------------------*/
 
 
     @Override
@@ -146,19 +175,19 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     }
 
     private void initUI() {
-        // init mVideoSurface
+
+        // Retour vidéo
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
+        if (null != mVideoSurface) {
+            mVideoSurface.setSurfaceTextureListener(this);
+        }
 
-
+        // Bouttons médias
         recordingTime = (TextView) findViewById(R.id.timer);
         mCaptureBtn = (Button) findViewById(R.id.btn_capture);
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
         mShootPhotoModeBtn = (Button) findViewById(R.id.btn_shoot_photo_mode);
         mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);
-
-        if (null != mVideoSurface) {
-            mVideoSurface.setSurfaceTextureListener(this);
-        }
 
         mCaptureBtn.setOnClickListener(this);
         mRecordBtn.setOnClickListener(this);
@@ -175,6 +204,64 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 } else {
                     stopRecord();
                 }
+            }
+        });
+
+        // Joysticks
+        mScreenJoystickRight = (OnScreenJoystick)findViewById(R.id.directionJoystickRight);
+        mScreenJoystickLeft = (OnScreenJoystick)findViewById(R.id.directionJoystickLeft);
+
+        mScreenJoystickLeft.setJoystickListener(new OnScreenJoystickListener(){
+
+            @Override
+            public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
+                if(Math.abs(pX) < 0.02 ){
+                    pX = 0;
+                }
+
+                if(Math.abs(pY) < 0.02 ){
+                    pY = 0;
+                }
+                float pitchJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMaxVelocity;
+                float rollJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMaxVelocity;
+
+                mPitch = (float)(pitchJoyControlMaxSpeed * pY);
+
+                mRoll = (float)(rollJoyControlMaxSpeed * pX);
+
+                if (null == mSendVirtualStickDataTimer) {
+                    mSendVirtualStickDataTask = new SendVirtualStickDataTask();
+                    mSendVirtualStickDataTimer = new Timer();
+                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 100, 200);
+                }
+
+            }
+
+        });
+
+        mScreenJoystickRight.setJoystickListener(new OnScreenJoystickListener() {
+
+            @Override
+            public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
+                if(Math.abs(pX) < 0.02 ){
+                    pX = 0;
+                }
+
+                if(Math.abs(pY) < 0.02 ){
+                    pY = 0;
+                }
+                float verticalJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickVerticalControlMaxVelocity;
+                float yawJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickYawControlMaxAngularVelocity;
+
+                mYaw = (float)(yawJoyControlMaxSpeed * pX);
+                mThrottle = (float)(verticalJoyControlMaxSpeed * pY);
+
+                if (null == mSendVirtualStickDataTimer) {
+                    mSendVirtualStickDataTask = new SendVirtualStickDataTask();
+                    mSendVirtualStickDataTimer = new Timer();
+                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
+                }
+
             }
         });
     }
@@ -350,17 +437,28 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
 
 
+    class SendVirtualStickDataTask extends TimerTask {
+
+        @Override
+        public void run() {
+            if (FPVDemoApplication.isFlightControllerAvailable()) {
+                FPVDemoApplication.getAircraftInstance().
+                        getFlightController().sendVirtualStickFlightControlData(
+                        new DJIVirtualStickFlightControlData(
+                                mPitch, mRoll, mYaw, mThrottle
+                        ), new DJICommonCallbacks.DJICompletionCallback() {
+                            @Override
+                            public void onResult(DJIError djiError) {
+
+                            }
+                        }
+                );
+            }
+        }
+    }
 
 
 
-    /* ---------------------------------------- JOYSTICKS ---------------------------------------- */
-
-    //test
-
-
-
-
-    /* --------------------------------------------------------------------------------------------*/
 
 
 

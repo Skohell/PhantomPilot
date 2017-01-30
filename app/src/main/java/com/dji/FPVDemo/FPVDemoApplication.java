@@ -48,6 +48,28 @@ public class FPVDemoApplication extends Application{
         return getProductInstance() != null && getProductInstance() instanceof DJIHandHeld;
     }
 
+    public static synchronized DJIAircraft getAircraftInstance() {
+        if (!isAircraftConnected()) return null;
+        return (DJIAircraft) getProductInstance();
+    }
+
+    public static synchronized DJIHandHeld getHandHeldInstance() {
+        if (!isHandHeldConnected()) return null;
+        return (DJIHandHeld) getProductInstance();
+    }
+
+    public static boolean isFlightControllerAvailable() {
+        return isProductModuleAvailable() && isAircraft() &&
+                (null != FPVDemoApplication.getAircraftInstance().getFlightController());
+    }
+    public static boolean isProductModuleAvailable() {
+        return (null != FPVDemoApplication.getProductInstance());
+    }
+
+    public static boolean isAircraft() {
+        return FPVDemoApplication.getProductInstance() instanceof DJIAircraft;
+    }
+
     public static synchronized DJICamera getCameraInstance() {
 
         if (getProductInstance() == null) return null;
