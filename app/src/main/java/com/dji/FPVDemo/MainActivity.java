@@ -3,6 +3,8 @@ package com.dji.FPVDemo;
 import android.app.Activity;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
@@ -17,17 +19,22 @@ import android.widget.ToggleButton;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import dji.common.battery.DJIBatteryState;
 import dji.common.camera.CameraSystemState;
 import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
+import dji.common.flightcontroller.DJIFlightControllerCurrentState;
 import dji.common.flightcontroller.DJIFlightControllerDataType;
+import dji.common.flightcontroller.DJILocationCoordinate3D;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
 import dji.common.product.Model;
 import dji.common.util.DJICommonCallbacks;
+import dji.sdk.battery.DJIBattery;
 import dji.sdk.camera.DJICamera;
 import dji.sdk.camera.DJICamera.CameraReceivedVideoDataCallback;
 import dji.sdk.codec.DJICodecManager;
 import dji.sdk.base.DJIBaseProduct;
+import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
 
 
 public class MainActivity extends Activity implements SurfaceTextureListener,OnClickListener{
@@ -41,6 +48,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private Button mCaptureBtn, mShootPhotoModeBtn, mRecordVideoModeBtn;
     private ToggleButton mRecordBtn;
     private TextView recordingTime;
+
+    private TextView mbattery_level;
+    private TextView mgps;
 
     //Joysticks
     private OnScreenJoystick mScreenJoystickRight;
@@ -63,8 +73,32 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private float mYaw;
     private float mThrottle;
 
+    protected StringBuffer mBatteryStringBuffer;
+    protected StringBuffer mGpsStringBuffer;
+    protected static final int CHANGE_TEXT_VIEW = 0;
+
+
+
     private Timer mSendVirtualStickDataTimer;
     private SendVirtualStickDataTask mSendVirtualStickDataTask;
+
+
+    protected Handler mHandler = new Handler(new Handler.Callback() {
+
+        @Override
+        public boolean handleMessage(Message msg) {
+            switch (msg.what) {
+                case CHANGE_TEXT_VIEW :
+                    mbattery_level.setText(mBatteryStringBuffer.toString());
+                    mgps.setText(mGpsStringBuffer.toString());
+                    break;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+    });
 
     /* ----------------------------------------------------------------------------------*/
 
@@ -76,6 +110,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         setContentView(R.layout.activity_main);
 
         initUI();
+
+        mBatteryStringBuffer = new StringBuffer();
+        mGpsStringBuffer = new StringBuffer();
 
         // The callback for receiving the raw H264 video data for camera live view
         mReceivedVideoDataCallBack = new CameraReceivedVideoDataCallback() {
@@ -130,6 +167,48 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             });
 
         }
+
+        try {
+            FPVDemoApplication.getProductInstance().getBattery().setBatteryStateUpdateCallback(
+                    new DJIBattery.DJIBatteryStateUpdateCallback() {
+                        @Override
+                        public void onResult(DJIBatteryState djiBatteryState) {
+                            mBatteryStringBuffer.delete(0, mBatteryStringBuffer.length());
+
+                            mBatteryStringBuffer.append("Battery: ").
+                                    append(djiBatteryState.getBatteryEnergyRemainingPercent()).
+                                    append("%\n");
+
+                            mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
+                        }
+                    }
+            );
+
+            FPVDemoApplication.getAircraftInstance().getFlightController().setUpdateSystemStateCallback(new DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback() {
+                @Override
+                public void onResult(DJIFlightControllerCurrentState djiFlightControllerCurrentState) {
+                    mGpsStringBuffer.delete(0, mGpsStringBuffer.length());
+
+                    mGpsStringBuffer.append("Altitude : ").
+                            append(djiFlightControllerCurrentState.getAircraftLocation().getAltitude()).
+                            append("m. ").
+                            append("Latitude : ").
+                            append(djiFlightControllerCurrentState.getAircraftLocation().getLatitude()).
+                            append("Longitude :").
+                            append(djiFlightControllerCurrentState.getAircraftLocation().getLongitude());
+
+
+
+                            mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
+                }
+            });
+
+
+
+        } catch (Exception exception) {
+
+        }
+
 
     }
 
@@ -186,8 +265,12 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         recordingTime = (TextView) findViewById(R.id.timer);
         mCaptureBtn = (Button) findViewById(R.id.btn_capture);
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
+        /*
         mShootPhotoModeBtn = (Button) findViewById(R.id.btn_shoot_photo_mode);
-        mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);
+        mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);*/
+
+        mbattery_level = (TextView) findViewById(R.id.battery_level);
+        mgps = (TextView) findViewById(R.id.gps);
 
         mCaptureBtn.setOnClickListener(this);
         mRecordBtn.setOnClickListener(this);
@@ -338,6 +421,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 captureAction();
                 break;
             }
+            /*
             case R.id.btn_shoot_photo_mode:{
                 switchCameraMode(DJICameraSettingsDef.CameraMode.ShootPhoto);
                 break;
@@ -345,7 +429,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             case R.id.btn_record_video_mode:{
                 switchCameraMode(DJICameraSettingsDef.CameraMode.RecordVideo);
                 break;
-            }
+            }*/
             default:
                 break;
         }
