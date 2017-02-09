@@ -191,8 +191,8 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         mCaptureBtn.setOnClickListener(this);
         mRecordBtn.setOnClickListener(this);
-        mShootPhotoModeBtn.setOnClickListener(this);
-        mRecordVideoModeBtn.setOnClickListener(this);
+       /* mShootPhotoModeBtn.setOnClickListener(this);
+        mRecordVideoModeBtn.setOnClickListener(this);*/
 
         recordingTime.setVisibility(View.INVISIBLE);
 

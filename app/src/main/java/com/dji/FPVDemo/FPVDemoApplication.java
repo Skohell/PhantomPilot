@@ -88,6 +88,8 @@ public class FPVDemoApplication extends Application{
 
     @Override
     public void onCreate() {
+
+
         super.onCreate();
         mHandler = new Handler(Looper.getMainLooper());
 
