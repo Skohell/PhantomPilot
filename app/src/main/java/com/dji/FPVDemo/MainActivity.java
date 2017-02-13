@@ -193,10 +193,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                             append(djiFlightControllerCurrentState.getAircraftLocation().getAltitude()).
                             append("m. ").
                             append("Latitude : ").
-                            append(djiFlightControllerCurrentState.getAircraftLocation().getLatitude()).
+                            append(String.format("%.5f",djiFlightControllerCurrentState.getAircraftLocation().getLatitude())).
                             append("Longitude :").
-                            append(djiFlightControllerCurrentState.getAircraftLocation().getLongitude());
-
+                            append(String.format("%.5f",djiFlightControllerCurrentState.getAircraftLocation().getLongitude()));
 
 
                             mHandler.sendEmptyMessage(CHANGE_TEXT_VIEW);
@@ -468,7 +467,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 @Override
                 public void onResult(DJIError error) {
                     if (error == null) {
-                        showToast("take photo: success");
+                        showToast("Photo enregistrée.");
                     } else {
                         showToast(error.getDescription());
                     }
@@ -489,7 +488,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 public void onResult(DJIError error)
                 {
                     if (error == null) {
-                        showToast("Record video: success");
+                        showToast("Début enregistrement.");
                     }else {
                         showToast(error.getDescription());
                     }
@@ -509,7 +508,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 public void onResult(DJIError error)
                 {
                     if(error == null) {
-                        showToast("Stop recording: success");
+                        showToast("Vidéo capturée.");
                     }else {
                         showToast(error.getDescription());
                     }
