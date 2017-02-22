@@ -25,7 +25,6 @@ import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.DJIFlightControllerCurrentState;
 import dji.common.flightcontroller.DJIFlightControllerDataType;
-import dji.common.flightcontroller.DJILocationCoordinate3D;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
 import dji.common.product.Model;
 import dji.common.util.DJICommonCallbacks;
@@ -209,6 +208,20 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         }
 
 
+        FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(
+                new DJICommonCallbacks.DJICompletionCallback() {
+                    @Override
+                    public void onResult(DJIError djiError) {
+                        if (djiError != null){
+                            showToast(djiError.getDescription());
+                        }else
+                        {
+                            showToast("Sticks activés");
+                        }
+                    }
+                }
+        );
+
     }
 
     protected void onProductChange() {
@@ -342,6 +355,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     mSendVirtualStickDataTask = new SendVirtualStickDataTask();
                     mSendVirtualStickDataTimer = new Timer();
                     mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
+
                 }
 
             }
@@ -420,6 +434,14 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 captureAction();
                 break;
             }
+            case R.id.btn_decoller:{
+                decollerAction();
+                break;
+            }
+            case R.id.btn_atterrir:{
+                atterrirAction();
+                break;
+            }
             /*
             case R.id.btn_shoot_photo_mode:{
                 switchCameraMode(DJICameraSettingsDef.CameraMode.ShootPhoto);
@@ -431,6 +453,47 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             }*/
             default:
                 break;
+        }
+    }
+
+    private void decollerAction(){
+
+        if(FPVDemoApplication.getAircraftInstance().getFlightController() != null){
+            FPVDemoApplication.getAircraftInstance().getFlightController().takeOff(
+                    new DJICommonCallbacks.DJICompletionCallback() {
+                @Override
+                public void onResult(DJIError djiError) {
+                    if (djiError != null) {
+                        showToast(djiError.getDescription());
+                    } else {
+                        showToast("Décollage");
+                    }
+                }
+            });
+        }
+        else{
+            showToast("Erreur lors du décollage.");
+        }
+    }
+
+
+    private void atterrirAction(){
+
+        if(FPVDemoApplication.getAircraftInstance().getFlightController() != null){
+            FPVDemoApplication.getAircraftInstance().getFlightController().autoLanding(
+                    new DJICommonCallbacks.DJICompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            if (djiError != null) {
+                                showToast(djiError.getDescription());
+                            } else {
+                                showToast("Atterrissage");
+                            }
+                        }
+                    });
+        }
+        else{
+            showToast("Erreur lors de l'atterrissage.");
         }
     }
 

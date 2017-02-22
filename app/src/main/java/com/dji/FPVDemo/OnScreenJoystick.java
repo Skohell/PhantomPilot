@@ -1,6 +1,5 @@
 package com.dji.FPVDemo;
 
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -16,8 +15,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
-
-import com.dji.FPVDemo.R;
 
 
 public class OnScreenJoystick extends SurfaceView implements
@@ -111,7 +108,7 @@ public class OnScreenJoystick extends SurfaceView implements
 
         while (retry) {
             try {
-                // code to kill Thread
+
                 mThread.join();
                 retry = false;
             } catch (InterruptedException e) {
@@ -129,6 +126,7 @@ public class OnScreenJoystick extends SurfaceView implements
 
         mKnobBounds.set(mKnobX, mKnobY, mKnobX + mKnobSize, mKnobY + mKnobSize);
         pCanvas.drawBitmap(mJoystick, null, mKnobBounds, null);
+
     }
 
     @Override

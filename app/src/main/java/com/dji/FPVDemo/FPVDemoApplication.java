@@ -7,7 +7,6 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
-import dji.common.handheld.DJIHandheldButtonStatus;
 import dji.sdk.camera.DJICamera;
 import dji.sdk.products.DJIAircraft;
 import dji.sdk.products.DJIHandHeld;
@@ -22,16 +21,16 @@ import dji.common.error.DJISDKError;
 
 public class FPVDemoApplication extends Application{
 
-    public static final String FLAG_CONNECTION_CHANGE = "fpv_tutorial_connection_change";
+    public static final String FLAG_CONNECTION_CHANGE = "connection_change";
 
+    // Instance unique de notre produit.
     private static DJIBaseProduct mProduct;
 
     private Handler mHandler;
 
     /**
-     *
-     * This function is used to get the instance of DJIBaseProduct.
-     * If no product is connected, it returns null.
+     * Getter du produit.
+     * @return instance de produit
      */
     public static synchronized DJIBaseProduct getProductInstance() {
         if (null == mProduct) {
@@ -70,6 +69,10 @@ public class FPVDemoApplication extends Application{
         return FPVDemoApplication.getProductInstance() instanceof DJIAircraft;
     }
 
+    /**
+     * Getter de la camera de notre produit.
+     * @return camera du produit
+     */
     public static synchronized DJICamera getCameraInstance() {
 
         if (getProductInstance() == null) return null;
@@ -86,11 +89,13 @@ public class FPVDemoApplication extends Application{
         return camera;
     }
 
+
+
     @Override
     public void onCreate() {
 
-
         super.onCreate();
+
         mHandler = new Handler(Looper.getMainLooper());
 
         // Initialise le DJISDKManager.
@@ -98,12 +103,11 @@ public class FPVDemoApplication extends Application{
     }
 
     /**
-     * When starting SDK services, an instance of interface DJISDKManager.DJISDKManagerCallback will be used to listen to 
-     * the SDK Registration result and the product changing.
+     * Instance (obligatoire) permettant d'avoir un retour sur la connexion au sdk.
      */
     private DJISDKManager.DJISDKManagerCallback mDJISDKManagerCallback = new DJISDKManager.DJISDKManagerCallback() {
 
-        //Listens to the SDK registration result
+        // Obtient le résultat.
         @Override
         public void onGetRegisteredResult(DJIError error) {
 
@@ -136,7 +140,7 @@ public class FPVDemoApplication extends Application{
             DJISDKManager.getInstance().startConnectionToProduct();
         }
 
-        //Listens to the connected product changing, including two parts, component changing or product connection changing.
+        // Changement de produit.
         @Override
         public void onProductChanged(DJIBaseProduct oldProduct, DJIBaseProduct newProduct) {
 
@@ -183,7 +187,6 @@ public class FPVDemoApplication extends Application{
     }
 
     private Runnable updateRunnable = new Runnable() {
-
         @Override
         public void run() {
             Intent intent = new Intent(FLAG_CONNECTION_CHANGE);
