@@ -48,6 +48,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private ToggleButton mRecordBtn;
     private TextView recordingTime;
 
+    private Button mdecollerBtn;
+    private Button matterrirBtn;
+
     private TextView mbattery_level;
     private TextView mgps;
 
@@ -281,11 +284,16 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mShootPhotoModeBtn = (Button) findViewById(R.id.btn_shoot_photo_mode);
         mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);*/
 
+        mdecollerBtn = (Button) findViewById(R.id.btn_decoller);
+        matterrirBtn = (Button) findViewById(R.id.btn_atterrir);
+
         mbattery_level = (TextView) findViewById(R.id.battery_level);
         mgps = (TextView) findViewById(R.id.gps);
 
         mCaptureBtn.setOnClickListener(this);
         mRecordBtn.setOnClickListener(this);
+        mdecollerBtn.setOnClickListener(this);
+        matterrirBtn.setOnClickListener(this);
        /* mShootPhotoModeBtn.setOnClickListener(this);
         mRecordVideoModeBtn.setOnClickListener(this);*/
 
