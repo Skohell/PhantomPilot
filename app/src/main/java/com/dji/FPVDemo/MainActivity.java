@@ -50,6 +50,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     private Button mdecollerBtn;
     private Button matterrirBtn;
+    private Button mswitchControlBtn;
 
     private TextView mbattery_level;
     private TextView mgps;
@@ -58,9 +59,20 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private OnScreenJoystick mScreenJoystickRight;
     private OnScreenJoystick mScreenJoystickLeft;
 
+    private Button mleftUp;
+    private Button mleftLeft;
+    private Button mleftRight;
+    private Button mleftDown;
+    private Button mrightUp;
+    private Button mrightLeft;
+    private Button mrightRight;
+    private Button mrightDown;
+
     /* --------------------------------------------------------------------------------*/
 
     /* ------------------------------- ATTRIBUTS ------------------------------------- */
+
+    private boolean isJoystickVisible = true;
 
     private static final String TAG = MainActivity.class.getName();
 
@@ -287,6 +299,18 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mdecollerBtn = (Button) findViewById(R.id.btn_decoller);
         matterrirBtn = (Button) findViewById(R.id.btn_atterrir);
 
+        mleftDown = (Button) findViewById(R.id.button_left_down);
+        mleftRight = (Button) findViewById(R.id.button_left_right);
+        mleftLeft = (Button) findViewById(R.id.button_left_left);
+        mleftUp = (Button) findViewById(R.id.button_left_up);
+        mrightDown = (Button) findViewById(R.id.button_right_down);
+        mrightLeft = (Button) findViewById(R.id.button_left_left);
+        mrightUp = (Button) findViewById(R.id.button_right_up);
+        mrightRight = (Button) findViewById(R.id.button_right_right);
+
+
+        mswitchControlBtn = (Button) findViewById(R.id.switchControlBtn);
+
         mbattery_level = (TextView) findViewById(R.id.battery_level);
         mgps = (TextView) findViewById(R.id.gps);
 
@@ -294,6 +318,15 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mRecordBtn.setOnClickListener(this);
         mdecollerBtn.setOnClickListener(this);
         matterrirBtn.setOnClickListener(this);
+        mswitchControlBtn.setOnClickListener(this);
+        mleftDown.setOnClickListener(this);
+        mleftLeft.setOnClickListener(this);
+        mleftRight.setOnClickListener(this);
+        mleftUp.setOnClickListener(this);
+        mrightDown.setOnClickListener(this);
+        mrightLeft.setOnClickListener(this);
+        mrightRight.setOnClickListener(this);
+        mrightUp.setOnClickListener(this);
        /* mShootPhotoModeBtn.setOnClickListener(this);
         mRecordVideoModeBtn.setOnClickListener(this);*/
 
@@ -450,6 +483,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 atterrirAction();
                 break;
             }
+            case R.id.switchControlBtn:{
+                switchControl();
+                break;
+            }
+
             /*
             case R.id.btn_shoot_photo_mode:{
                 switchCameraMode(DJICameraSettingsDef.CameraMode.ShootPhoto);
@@ -587,6 +625,40 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             }); // Execute the stopRecordVideo API
         }
 
+    }
+
+    private void switchControl()
+    {
+
+        if(isJoystickVisible)
+        {
+            mScreenJoystickLeft.setVisibility(View.GONE);
+            mScreenJoystickRight.setVisibility(View.GONE);
+            isJoystickVisible = false;
+            mrightUp.setVisibility(View.VISIBLE);
+            mrightRight.setVisibility(View.VISIBLE);
+            mrightLeft.setVisibility(View.VISIBLE);
+            mrightDown.setVisibility(View.VISIBLE);
+            mleftLeft.setVisibility(View.VISIBLE);
+            mleftRight.setVisibility(View.VISIBLE);
+            mleftDown.setVisibility(View.VISIBLE);
+            mleftUp.setVisibility(View.VISIBLE);
+
+        }
+        else
+        {
+            mScreenJoystickLeft.setVisibility(View.VISIBLE);
+            mScreenJoystickRight.setVisibility(View.VISIBLE);
+            isJoystickVisible = true;
+            mrightUp.setVisibility(View.GONE);
+            mrightRight.setVisibility(View.GONE);
+            mrightLeft.setVisibility(View.GONE);
+            mrightDown.setVisibility(View.GONE);
+            mleftLeft.setVisibility(View.GONE);
+            mleftRight.setVisibility(View.GONE);
+            mleftDown.setVisibility(View.GONE);
+            mleftUp.setVisibility(View.GONE);
+        }
     }
 
 
