@@ -139,7 +139,7 @@
         android:layout_toEndOf="@+id/directionJoystickLeft" />
 
     <Button
-        android:text="Button"
+        android:text="Mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switchControlBtn"
@@ -147,7 +147,7 @@
         android:layout_alignEnd="@+id/directionJoystickRight" />
 
     <Button
-        android:text="Button"
+        android:text="Gauche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/button_left_right"
@@ -155,7 +155,7 @@
         android:id="@+id/button_left_left" />
 
     <Button
-        android:text="Button"
+        android:text="Avant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_up"
@@ -164,7 +164,7 @@
         android:layout_marginTop="12dp" />
 
     <Button
-        android:text="Button"
+        android:text="Droite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_right"
@@ -173,7 +173,7 @@
         android:layout_marginStart="13dp" />
 
     <Button
-        android:text="Button"
+        android:text="Arrière"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_down"
@@ -181,7 +181,7 @@
         android:layout_alignStart="@+id/button_left_up" />
 
     <Button
-        android:text="Button"
+        android:text="Haut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button_left_up"
@@ -190,7 +190,7 @@
         android:id="@+id/button_right_up" />
 
     <Button
-        android:text="Button"
+        android:text="Rot.Droite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_right_up"
@@ -198,7 +198,7 @@
         android:id="@+id/button_right_right" />
 
     <Button
-        android:text="Button"
+        android:text="Rot.Gauche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/button_right_right"
@@ -206,7 +206,7 @@
         android:id="@+id/button_right_left" />
 
     <Button
-        android:text="Button"
+        android:text="Bas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/button_left_down"

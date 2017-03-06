@@ -304,7 +304,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mleftLeft = (Button) findViewById(R.id.button_left_left);
         mleftUp = (Button) findViewById(R.id.button_left_up);
         mrightDown = (Button) findViewById(R.id.button_right_down);
-        mrightLeft = (Button) findViewById(R.id.button_left_left);
+        mrightLeft = (Button) findViewById(R.id.button_left_right);
         mrightUp = (Button) findViewById(R.id.button_right_up);
         mrightRight = (Button) findViewById(R.id.button_right_right);
 
@@ -632,8 +632,8 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         if(isJoystickVisible)
         {
-            mScreenJoystickLeft.setVisibility(View.GONE);
-            mScreenJoystickRight.setVisibility(View.GONE);
+            mScreenJoystickLeft.setVisibility(View.INVISIBLE);
+            mScreenJoystickRight.setVisibility(View.INVISIBLE);
             isJoystickVisible = false;
             mrightUp.setVisibility(View.VISIBLE);
             mrightRight.setVisibility(View.VISIBLE);
@@ -650,14 +650,14 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             mScreenJoystickLeft.setVisibility(View.VISIBLE);
             mScreenJoystickRight.setVisibility(View.VISIBLE);
             isJoystickVisible = true;
-            mrightUp.setVisibility(View.GONE);
-            mrightRight.setVisibility(View.GONE);
-            mrightLeft.setVisibility(View.GONE);
-            mrightDown.setVisibility(View.GONE);
-            mleftLeft.setVisibility(View.GONE);
-            mleftRight.setVisibility(View.GONE);
-            mleftDown.setVisibility(View.GONE);
-            mleftUp.setVisibility(View.GONE);
+            mrightUp.setVisibility(View.INVISIBLE);
+            mrightRight.setVisibility(View.INVISIBLE);
+            mrightLeft.setVisibility(View.INVISIBLE);
+            mrightDown.setVisibility(View.INVISIBLE);
+            mleftLeft.setVisibility(View.INVISIBLE);
+            mleftRight.setVisibility(View.INVISIBLE);
+            mleftDown.setVisibility(View.INVISIBLE);
+            mleftUp.setVisibility(View.INVISIBLE);
         }
     }
 
