@@ -155,15 +155,6 @@
         android:id="@+id/button_left_left" />
 
     <Button
-        android:text="Avant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_left_up"
-        android:layout_below="@+id/switchControlBtn"
-        android:layout_toEndOf="@+id/linearLayout"
-        android:layout_marginTop="12dp" />
-
-    <Button
         android:text="Droite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -212,5 +203,23 @@
         android:layout_alignBottom="@+id/button_left_down"
         android:layout_alignStart="@+id/button_right_up"
         android:id="@+id/button_right_down" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_atterrir"
+        android:layout_toStartOf="@+id/btn_capture"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/debug" />
+
+    <Button
+        android:text="Avant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_left_up"
+        android:layout_below="@+id/switchControlBtn"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:layout_marginTop="14dp" />
 
 </RelativeLayout>
