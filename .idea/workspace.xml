@@ -57,10 +57,20 @@
       <file leaf-file-name="ConnectionActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#599#628#0" expanded="false" />
+                <element signature="e#952#970#0" expanded="false" />
+                <element signature="e#1037#1067#0" expanded="false" />
+                <element signature="method#onCreate#0;class#ConnectionActivity#0" expanded="false" />
+                <element signature="e#2317#2504#0" expanded="true" />
+                <element signature="e#2503#2504#0" expanded="true" />
+                <element signature="method#onDestroy#0;class#ConnectionActivity#0" expanded="false" />
+                <element signature="e#3213#3230#0" expanded="false" />
+                <element signature="method#onClick#0;class#ConnectionActivity#0" expanded="false" />
+                <marker date="1490223628697" expanded="false" signature="3331:3753" ph="{...}" />
+                <marker date="1490223628697" expanded="false" signature="3856:5020" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -69,7 +79,7 @@
       <file leaf-file-name="FPVDemoApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="-531">
               <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
@@ -2917,7 +2927,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -2930,14 +2942,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
@@ -2961,12 +2965,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-531">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#599#628#0" expanded="false" />
+            <element signature="e#952#970#0" expanded="false" />
+            <element signature="e#1037#1067#0" expanded="false" />
+            <element signature="method#onCreate#0;class#ConnectionActivity#0" expanded="false" />
+            <element signature="e#2317#2504#0" expanded="true" />
+            <element signature="e#2503#2504#0" expanded="true" />
+            <element signature="method#onDestroy#0;class#ConnectionActivity#0" expanded="false" />
+            <element signature="e#3213#3230#0" expanded="false" />
+            <element signature="method#onClick#0;class#ConnectionActivity#0" expanded="false" />
+            <marker date="1490223628697" expanded="false" signature="3331:3753" ph="{...}" />
+            <marker date="1490223628697" expanded="false" signature="3856:5020" ph="{...}" />
           </folding>
         </state>
       </provider>

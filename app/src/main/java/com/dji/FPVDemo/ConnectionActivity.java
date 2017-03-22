@@ -16,29 +16,38 @@ import android.widget.TextView;
 import dji.sdk.base.DJIBaseProduct;
 import dji.sdk.products.DJIAircraft;
 
-public class ConnectionActivity extends AppCompatActivity implements View.OnClickListener {
+public class ConnectionActivity extends AppCompatActivity implements View.OnClickListener
+{
 
+    //region Attributs Graphiques
 
+    // Texte sur l'état actuel de la connexion au drone.
+    private TextView textview_EtatConnexion;
 
-    //region Description
-    // Etat de la connection au drone.
-    private TextView mTextConnectionStatus;
+    // Texte sur l'état actuel du produit.
+    private TextView textview_EtatProduit;
 
-    // Nom du drone connecté.
-    private TextView mTextProduct;
+    // Bouton permettant d'accéder à la vue suivante une fois connecté.
+    private Button button_Ouvrir;
 
-    // Boutton pour accéder à la vue de pilotage.
-    private Button mBtnOpen;
+    //endregion
+    
+    //region Attributs
+
+    protected BroadcastReceiver mReceiver;
+
     //endregion
 
+    // region Cycle de vie Android
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
-        // Le SDK peut nécessiter des permissions en plus selon certaines versions.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        // Selon certaines versions, le SDK peut nécessiter des permissions supplémentaires.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.VIBRATE,
                             Manifest.permission.INTERNET, Manifest.permission.ACCESS_WIFI_STATE,
@@ -53,9 +62,20 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
 
         setContentView(R.layout.activity_connection);
 
-        // Initialisation de l'interface.
+        // Méthode d'initialisation de l'affichage.
         initUI();
 
+
+        mReceiver = new BroadcastReceiver()
+        {
+            @Override
+            public void onReceive(Context context, Intent intent)
+            {
+                updateUI();
+            }
+        };
+
+        // On s'enregistre pour attendre de savoir quand le drone se connecte grâce à FPVDemoApplication.
         IntentFilter filter = new IntentFilter();
         filter.addAction(FPVDemoApplication.FLAG_CONNECTION_CHANGE);
         registerReceiver(mReceiver, filter);
@@ -85,72 +105,72 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
         unregisterReceiver(mReceiver);
         super.onDestroy();
     }
+    //endregion
+
+    //region Méthodes
 
     /**
      * Méthode d'initialisation des éléments graphiques.
      */
     private void initUI() {
 
-        mTextConnectionStatus = (TextView) findViewById(R.id.text_connection_status);
+        textview_EtatConnexion = (TextView) findViewById(R.id.text_connection_status);
+        textview_EtatProduit = (TextView) findViewById(R.id.text_product_info);
+        button_Ouvrir = (Button) findViewById(R.id.btn_open);
 
-        mTextProduct = (TextView) findViewById(R.id.text_product_info);
+        button_Ouvrir.setOnClickListener(this);
 
-        mBtnOpen = (Button) findViewById(R.id.btn_open);
-        mBtnOpen.setOnClickListener(this);
-        mBtnOpen.setEnabled(false); // Le boutton est désactivé tant qu'aucun porduit n'est connecté.
+        // Au début le bouton est désactivé car aucun drone n'est encore connecté / détecté.
+        button_Ouvrir.setEnabled(false);
 
     }
 
-    /**
-     * Receiver permettant d'actualiser la vue quand un produit est connecté.
-     */
-    protected BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            refreshUI();
-        }
-    };
-
 
     /**
-     * Méthode d'actualisation de l'affichage.
+     * Méthode d'actualisation des éléments graphiques.
      */
-    private void refreshUI() {
+    private void updateUI() {
 
+        // On récupère le produit maintenant qu'on sait qu'il est connecté.
         DJIBaseProduct mProduct = FPVDemoApplication.getProductInstance();
 
-        // Si on a bien un produit de connecté.
-        if (null != mProduct && mProduct.isConnected()) {
+        if (mProduct != null && mProduct.isConnected())
+        {
 
-            // On active le boutton
-            mBtnOpen.setEnabled(true);
+            // On active le bouton permettant d'accéder à la vue suivante.
+            button_Ouvrir.setEnabled(true);
 
-            // On met à jour les différents affichages.
-            String str = mProduct instanceof DJIAircraft ? "DJIAircraft" : "DJIHandHeld";
-            mTextConnectionStatus.setText("Status: " + str + " connecté");
+            // On met à jour les différents affichages avec les informations de l'appareil.
 
-            if (null != mProduct.getModel()) {
-                mTextProduct.setText(mProduct.getModel().getDisplayName());
+            String mTypeProduit = mProduct instanceof DJIAircraft ? "DJIAircraft" : "DJIHandHeld";
+            textview_EtatConnexion.setText("Status: " + mTypeProduit + " connecté");
+
+            if (mProduct.getModel() != null) {
+                textview_EtatProduit.setText(mProduct.getModel().getDisplayName());
             } else {
-                mTextProduct.setText(R.string.product_information);
+                textview_EtatProduit.setText(R.string.product_information);
             }
 
-        } else {
-            mBtnOpen.setEnabled(false);
-            mTextProduct.setText(R.string.product_information);
-            mTextConnectionStatus.setText(R.string.connection_loose);
+        }
+        // Si néanmoins on ne peut accéder au produit connecté.
+        else
+        {
+            button_Ouvrir.setEnabled(false);
+            textview_EtatProduit.setText(R.string.product_information);
+            textview_EtatConnexion.setText(R.string.connection_loose);
         }
 
     }
 
-
+    /**
+     * Méthode gérant les différents clics sur la vue.
+     * @param v
+     */
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
         switch (v.getId()) {
-
-            // Clic sur le boutton "Ouvrir"
             case R.id.btn_open: {
-                // On lance la main activity.
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
@@ -160,4 +180,5 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    //endregion
 }
