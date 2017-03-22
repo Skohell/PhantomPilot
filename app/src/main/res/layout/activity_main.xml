@@ -222,4 +222,12 @@
         android:layout_toEndOf="@+id/linearLayout"
         android:layout_marginTop="14dp" />
 
+    <Button
+        android:text="Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/btn_atterrir"
+        android:id="@+id/btn_home" />
+
 </RelativeLayout>

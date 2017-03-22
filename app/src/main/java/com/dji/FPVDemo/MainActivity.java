@@ -26,6 +26,8 @@ import dji.common.error.DJIError;
 import dji.common.flightcontroller.DJIFlightControllerCurrentState;
 import dji.common.flightcontroller.DJIFlightControllerDataType;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
+import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
+import dji.common.flightcontroller.DJIVirtualStickVerticalControlMode;
 import dji.common.product.Model;
 import dji.common.util.DJICommonCallbacks;
 import dji.sdk.battery.DJIBattery;
@@ -51,6 +53,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     private Button mdecollerBtn;
     private Button matterrirBtn;
+    private Button mretourBaseBtn;
     private Button mswitchControlBtn;
 
     private TextView mbattery_level;
@@ -227,21 +230,8 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         }
 
-        
 
-        FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(
-                new DJICommonCallbacks.DJICompletionCallback() {
-                    @Override
-                    public void onResult(DJIError djiError) {
-                        if (djiError != null){
-                            showToast(djiError.getDescription());
-                        }else
-                        {
-                            showToast("Sticks activés");
-                        }
-                    }
-                }
-        );
+        activerJoysticks();
 
     }
 
@@ -305,6 +295,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         mdecollerBtn = (Button) findViewById(R.id.btn_decoller);
         matterrirBtn = (Button) findViewById(R.id.btn_atterrir);
+        mretourBaseBtn = (Button) findViewById(R.id.btn_home);
 
         mleftDown = (Button) findViewById(R.id.button_left_down);
         mleftRight = (Button) findViewById(R.id.button_left_right);
@@ -325,6 +316,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mRecordBtn.setOnClickListener(this);
         mdecollerBtn.setOnClickListener(this);
         matterrirBtn.setOnClickListener(this);
+        mretourBaseBtn.setOnClickListener(this);
         mswitchControlBtn.setOnClickListener(this);
         mleftDown.setOnClickListener(this);
         mleftLeft.setOnClickListener(this);
@@ -491,6 +483,10 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         });
     }
 
+    /**
+     * Méthode de gestion des clics des boutons sur la vue.
+     * @param v
+     */
     @Override
     public void onClick(View v) {
 
@@ -505,6 +501,10 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             }
             case R.id.btn_atterrir:{
                 atterrirAction();
+                break;
+            }
+            case R.id.btn_home:{
+                retourBaseAction();
                 break;
             }
             case R.id.switchControlBtn:{
@@ -526,9 +526,13 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         }
     }
 
-    private void decollerAction(){
 
-        if(FPVDemoApplication.getAircraftInstance().getFlightController() != null){
+    /**
+     * Méthode permettant le décollage automatique du drone.
+     */
+    private void decollerAction()
+    {
+        if(FPVDemoApplication.isFlightControllerAvailable()){
             FPVDemoApplication.getAircraftInstance().getFlightController().takeOff(
                     new DJICommonCallbacks.DJICompletionCallback() {
                 @Override
@@ -536,20 +540,22 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     if (djiError != null) {
                         showToast(djiError.getDescription());
                     } else {
-                        showToast("Décollage");
+                        showToast("Décollage : succès !");
                     }
                 }
             });
         }
         else{
-            showToast("Erreur lors du décollage.");
+            showToast("Erreur lors de l'acquisition du FLightController.");
         }
     }
 
-
-    private void atterrirAction(){
-
-        if(FPVDemoApplication.getAircraftInstance().getFlightController() != null){
+    /**
+     * Méthode permettant l'atterissage sur place du drone.
+     */
+    private void atterrirAction()
+    {
+        if(FPVDemoApplication.isFlightControllerAvailable()){
             FPVDemoApplication.getAircraftInstance().getFlightController().autoLanding(
                     new DJICommonCallbacks.DJICompletionCallback() {
                         @Override
@@ -557,15 +563,71 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                             if (djiError != null) {
                                 showToast(djiError.getDescription());
                             } else {
-                                showToast("Atterrissage");
+                                showToast("Atterrissage : succès !");
                             }
                         }
                     });
         }
         else{
-            showToast("Erreur lors de l'atterrissage.");
+            showToast("Erreur lors de l'acquisition du FlightController.");
         }
     }
+
+    /**
+     * Méthode permettant l'atterissage au point de départ du drone.
+     */
+    private void retourBaseAction()
+    {
+        if(FPVDemoApplication.isFlightControllerAvailable()){
+            FPVDemoApplication.getAircraftInstance().getFlightController().goHome(
+                    new DJICommonCallbacks.DJICompletionCallback() {
+                        @Override
+                        public void onResult(DJIError djiError) {
+                            if (djiError != null) {
+                                showToast(djiError.getDescription());
+                            } else {
+                                showToast("Retour base : succès !");
+                            }
+                        }
+                    });
+        }
+        else{
+            showToast("Erreur lors de l'acquisition du FlightController.");
+        }
+    }
+
+    /**
+     * Méthode permettant d'acitver le contrôle du drone par les joysticks.
+     */
+    private void activerJoysticks()
+    {
+        if(FPVDemoApplication.isFlightControllerAvailable())
+        {
+            if(FPVDemoApplication.getAircraftInstance().getFlightController().isVirtualStickControlModeAvailable())
+            {
+                FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(
+                        new DJICommonCallbacks.DJICompletionCallback() {
+                            @Override
+                            public void onResult(DJIError djiError) {
+                                if (djiError != null) {
+                                    showToast(djiError.getDescription());
+                                } else {
+                                    showToast("Activation des Sticks : succès !");
+                                }
+                            }
+                        }
+                );
+            }
+        }
+        else
+        {
+            showToast("Erreur lors de l'obtention du FlightController.");
+        }
+
+        FPVDemoApplication.getAircraftInstance().getFlightController().setVerticalControlMode(DJIVirtualStickVerticalControlMode.Velocity);
+
+    }
+
 
     private void switchCameraMode(DJICameraSettingsDef.CameraMode cameraMode){
 

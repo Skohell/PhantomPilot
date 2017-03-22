@@ -1,7 +1,6 @@
 package com.dji.FPVDemo;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,18 +9,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import dji.sdk.products.DJIAircraft;
 import dji.sdk.base.DJIBaseProduct;
+import dji.sdk.products.DJIAircraft;
 
 public class ConnectionActivity extends AppCompatActivity implements View.OnClickListener {
 
-    /* ------------------------------ ELEMENTS GRAPHIQUES ------------------------------*/
 
+
+    //region Description
     // Etat de la connection au drone.
     private TextView mTextConnectionStatus;
 
@@ -30,8 +29,8 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
 
     // Boutton pour accéder à la vue de pilotage.
     private Button mBtnOpen;
+    //endregion
 
-    /* ---------------------------------------------------------------------------------*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
