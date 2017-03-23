@@ -31,7 +31,7 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
     private Button button_Ouvrir;
 
     //endregion
-    
+
     //region Attributs
 
     protected BroadcastReceiver mReceiver;

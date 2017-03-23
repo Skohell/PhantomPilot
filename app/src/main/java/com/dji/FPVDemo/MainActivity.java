@@ -40,7 +40,8 @@ import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
 
 public class MainActivity extends Activity implements SurfaceTextureListener,OnClickListener{
 
-    // GITHUB DJACOB502 DRONEGROUNDSTATIONING //
+
+
 
     /* ------------------------------ ELEMENTS GRAPHIQUES ------------------------------*/
     // Retour vidéo
@@ -375,7 +376,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 if (null == mSendVirtualStickDataTimer) {
                     mSendVirtualStickDataTask = new SendVirtualStickDataTask();
                     mSendVirtualStickDataTimer = new Timer();
-                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
+                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 100, 200);
                 }
 
             }
@@ -386,6 +387,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
+
 
                 if(Math.abs(pX) < 0.02 ){
                     pX = 0;
@@ -401,19 +403,14 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 mYaw = (float)(yawJoyControlMaxSpeed * pX);
                 mThrottle = (float)(verticalJoyControlMaxSpeed * pY);
 
-                /*
+
                 if (null == mSendVirtualStickDataTimer) {
                     mSendVirtualStickDataTask = new SendVirtualStickDataTask();
                     mSendVirtualStickDataTimer = new Timer();
                     mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
 
                 }
-                */
-                mSendVirtualStickDataTask = new SendVirtualStickDataTask();
-                mSendVirtualStickDataTimer = new Timer();
-                mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
-                String s = "pitch:"+mPitch+" Yaw:"+mYaw+" Roll:"+mRoll+" Throttle:"+mThrottle;
-                debug.setText(s);
+
 
             }
         });

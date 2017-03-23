@@ -97,7 +97,7 @@ public class OnScreenJoystick extends SurfaceView implements
 
     @Override
     public void surfaceCreated(final SurfaceHolder arg0) {
-        mThread = new JoystickThread(); //fix
+        mThread = new JoystickThread();
         mThread.start();
 
     }
