@@ -25,9 +25,11 @@ import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.DJIFlightControllerCurrentState;
 import dji.common.flightcontroller.DJIFlightControllerDataType;
+import dji.common.flightcontroller.DJIFlightOrientationMode;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
 import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
 import dji.common.flightcontroller.DJIVirtualStickVerticalControlMode;
+import dji.common.flightcontroller.DJIVirtualStickYawControlMode;
 import dji.common.product.Model;
 import dji.common.util.DJICommonCallbacks;
 import dji.sdk.battery.DJIBattery;
@@ -355,7 +357,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mScreenJoystickRight = (OnScreenJoystick)findViewById(R.id.directionJoystickRight);
         mScreenJoystickLeft = (OnScreenJoystick)findViewById(R.id.directionJoystickLeft);
 
-        mScreenJoystickLeft.setJoystickListener(new OnScreenJoystickListener(){
+        mScreenJoystickRight.setJoystickListener(new OnScreenJoystickListener(){
 
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
@@ -379,11 +381,14 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 100, 200);
                 }
 
+                debug.setText(mPitch+" "+mRoll+" "+mYaw+ " "+mThrottle);
+
+
             }
 
         });
 
-        mScreenJoystickRight.setJoystickListener(new OnScreenJoystickListener() {
+        mScreenJoystickLeft.setJoystickListener(new OnScreenJoystickListener() {
 
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
@@ -410,6 +415,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
 
                 }
+
+                debug.setText(mPitch+" "+mRoll+" "+mYaw+ " "+mThrottle);
+
 
 
             }
@@ -614,14 +622,23 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                             }
                         }
                 );
+
+                FPVDemoApplication.getAircraftInstance().getFlightController().setFlightOrientationMode(DJIFlightOrientationMode.DefaultAircraftHeading, new DJICommonCallbacks.DJICompletionCallback() {
+                    @Override
+                    public void onResult(DJIError djiError) {
+
+                    }
+                });
+                FPVDemoApplication.getAircraftInstance().getFlightController().setVerticalControlMode(DJIVirtualStickVerticalControlMode.Velocity);
+                FPVDemoApplication.getAircraftInstance().getFlightController().setRollPitchControlMode(DJIVirtualStickRollPitchControlMode.Velocity);
+                FPVDemoApplication.getAircraftInstance().getFlightController().setYawControlMode(DJIVirtualStickYawControlMode.AngularVelocity);
+
             }
         }
         else
         {
             showToast("Erreur lors de l'obtention du FlightController.");
         }
-
-        FPVDemoApplication.getAircraftInstance().getFlightController().setVerticalControlMode(DJIVirtualStickVerticalControlMode.Velocity);
 
     }
 
@@ -754,11 +771,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 FPVDemoApplication.getAircraftInstance().
                         getFlightController().sendVirtualStickFlightControlData(
                         new DJIVirtualStickFlightControlData(
-                                mPitch, mRoll, mYaw, mThrottle
+                                mRoll, mPitch, mYaw, mThrottle
                         ), new DJICommonCallbacks.DJICompletionCallback() {
                             @Override
                             public void onResult(DJIError djiError) {
-                                showToast(djiError.toString());
+
                             }
                         }
                 );
