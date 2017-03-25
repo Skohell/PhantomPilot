@@ -121,7 +121,7 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
         button_Ouvrir.setOnClickListener(this);
 
         // Au début le bouton est désactivé car aucun drone n'est encore connecté / détecté.
-        button_Ouvrir.setEnabled(true);
+        button_Ouvrir.setEnabled(false);
 
     }
 
@@ -155,7 +155,7 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
         // Si néanmoins on ne peut accéder au produit connecté.
         else
         {
-            button_Ouvrir.setEnabled(true);
+            button_Ouvrir.setEnabled(false);
             textview_EtatProduit.setText(R.string.product_information);
             textview_EtatConnexion.setText(R.string.connection_loose);
         }

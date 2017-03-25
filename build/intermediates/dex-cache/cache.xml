@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="752afe6edab91a18f783681768d2070e3c623da4">
+        sha1="61a582c00967660dbcab23cde5f5288b3c3631d7">
         <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_175aa7f0b5634e7da0bc5edb17098ebafd0cf80c/classes.dex" />
     </item>
     <item
@@ -205,7 +205,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="d30709c9980d59053f42e4b2ccb1195b18427b18">
+        sha1="f1663d88ea1161f66ff487b5a81e60d323ffc46d">
         <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_35be3542991fb2e9484cf1fd49e2ffbcd90a30a2/classes.dex" />
     </item>
     <item
