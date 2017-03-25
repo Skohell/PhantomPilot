@@ -608,8 +608,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     {
         if(FPVDemoApplication.isFlightControllerAvailable())
         {
-            if(FPVDemoApplication.getAircraftInstance().getFlightController().isVirtualStickControlModeAvailable())
-            {
+            // Cette vérification est normalement nécessaire mais nous renvoyait parfois false, bien que derrière enableVirtualStick fonctionnait ?!
+            //if(FPVDemoApplication.getAircraftInstance().getFlightController().isVirtualStickControlModeAvailable()){
+
                 FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(
                         new DJICommonCallbacks.DJICompletionCallback() {
                             @Override
@@ -623,21 +624,26 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                         }
                 );
 
+                
+                /*
                 FPVDemoApplication.getAircraftInstance().getFlightController().setFlightOrientationMode(DJIFlightOrientationMode.DefaultAircraftHeading, new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
-
+                        if(djiError!=null)
+                            showToast(djiError.toString());
                     }
                 });
+                */
                 FPVDemoApplication.getAircraftInstance().getFlightController().setVerticalControlMode(DJIVirtualStickVerticalControlMode.Velocity);
                 FPVDemoApplication.getAircraftInstance().getFlightController().setRollPitchControlMode(DJIVirtualStickRollPitchControlMode.Velocity);
                 FPVDemoApplication.getAircraftInstance().getFlightController().setYawControlMode(DJIVirtualStickYawControlMode.AngularVelocity);
 
-            }
+            //}
+
         }
         else
         {
-            showToast("Erreur lors de l'obtention du FlightController.");
+            showToast("Erreur : Joysticks non activés.");
         }
 
     }

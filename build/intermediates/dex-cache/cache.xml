@@ -2,24 +2,6 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/rxjava-computation-expressions-0.21.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="1998e4f447fbf0194f39a12f3010d1f4f598667f">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/rxjava-computation-expressions-0.21.1_c936d2d44b28629311609d6b9b771670fe9b0790.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/converter-gson-2.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="56caaeea09d3e406f6160972ff5d3e6c0e6f139b">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/converter-gson-2.0.1_c92f4d5dab90a92f2844e6c261ef5dbe0de97360.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
         jumboMode="true"
@@ -38,13 +20,13 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/okio-1.7.0_99239312363e77ed0ed8ddf052c1926e151468b9/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/f1bc476cc167b18e66c297df599b2377131a8947/gson-2.6.2.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/gson-2.6.2_ad4889dc2341f238b7d2dc6138e2e039a3f5fffd.jar" />
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_fae1b4157d56288ea438d1a6aa55372fd921f354/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -56,15 +38,6 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/dji_gson_640aeb1fe2eda6a48340fe0c2ed15c6e6df2e66d/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/dji_gson.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="729a9cf81838d286b6098dc9c33d264d5db48a26">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/dji_gson_953b25b0baa620e45c7985c37e3eb826fa8fe3be.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
         jumboMode="true"
@@ -72,51 +45,6 @@
         revision="23.0.2"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_0cc7e976dbf0875a98a2fe04541fca998f2ab544/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/retrofit-2.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="b55150f9b025eebdddb6426bb4e85e673af338a3">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/retrofit-2.0.1_d262d992f53fd184bc5fd3837124374082912266.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/dji_eventbus.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="91a5399115cedf41ebd53be7c96e424ac3aed1a8">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/dji_eventbus_f23106de22e41498adaa5713f3fbb91fe04bc904.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_81df23240b345bcd06b1e2547e5aac85385d5603.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/rxjava-1.1.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d4f11e8e7dd89f5f87e5d81000582eabb071da91">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/rxjava-1.1.2_4fc23c49fb79bf1dbe9113576bd046227d37e127.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/okhttp-3.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="03773badcb9e99ad699db657fa0e20cafbf774ef">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/okhttp-3.2.0_4fd997867be5059ede558366635488672a7c6edc.jar" />
     </item>
     <item
         is-multidex="true"
@@ -138,6 +66,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/okio-1.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="58a92147e3365aa0039fc81a31b87f4957e6a555">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/okio-1.7.0_14651074dfa97c1447148391a9832f88c190da8b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/exploded-aar/FPVDemo/dJISDKLIB/unspecified/jars/libs/rxandroid-1.1.0.jar"
         jumboMode="true"
         optimize="true"
@@ -146,13 +83,13 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/rxandroid-1.1.0_474109d56526bc0c88d96d8b9ed555fd33b49cf8/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_7e39fc89557b45e31211ebc276071f6aed2bbd27.jar" />
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_bdefe272d5a8ed1ede495389c0c1672225ed0e1b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -164,13 +101,22 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_9c06918612fea270796dac9437700479087b5d6f/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/dji-sdk.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="1caeea6670e86792065a293010f09555d21d05e8">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/dji-sdk_2161fc0688869d9c2a4d46954dfbce6e696559b7.jar" />
+        sha1="752afe6edab91a18f783681768d2070e3c623da4">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_175aa7f0b5634e7da0bc5edb17098ebafd0cf80c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/rxandroid-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="92b4c46bf73b1caff27f0ad2b73fcd5730fa37de">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/rxandroid-1.1.0_6b0ce931180afc7da34c870c6b4f8ac56fcef065/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -182,31 +128,31 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_3deaa87601a7c88e5b064a46b5759922b55e2432/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_0b47fa069b0ce2c52341b64713e8d3986bf630e2.jar" />
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_3bfee2331a6dc24617c96d46849bd8a210c33602/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/okio-1.7.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="58a92147e3365aa0039fc81a31b87f4957e6a555">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/okio-1.7.0_6b99de7da838db25be4aee2f0e74b8d36679f1b7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.3.0_0397752000c184693edbc7d482613ed6aa5818b0.jar" />
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_27d9e78c1239a06ccc7ac4dc3808c607a1d1c9f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/rxjava-computation-expressions-0.21.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1998e4f447fbf0194f39a12f3010d1f4f598667f">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/rxjava-computation-expressions-0.21.1_96118ab55f093c6fb5bb9a70c41c282d4b2126ea/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -219,21 +165,21 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/sqlbrite-0.6.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="80411084d9962ab5b48b274bb4b49e063095535a">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/sqlbrite-0.6.2_d79a3d588c0fbf255d0abbc0d36ed3c5fd5f763c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="821e7dcbc418cbad242507b39360aa17ffd74848">
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e3221c1e01aa9a89d682bd894d5230392864eb35/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.3.0_21e365e797b273301bfd963310f5f3c4bea15548.jar" />
     </item>
     <item
         is-multidex="true"
@@ -254,13 +200,13 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/sqlbrite-0.6.2_9e7faaa6447c056ee8d9213869a792432ddd8a42/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/rxandroid-1.1.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="92b4c46bf73b1caff27f0ad2b73fcd5730fa37de">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/rxandroid-1.1.0_182991b0c89edbec49b5cf78aab07533f3fd6897.jar" />
+        sha1="d30709c9980d59053f42e4b2ccb1195b18427b18">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_35be3542991fb2e9484cf1fd49e2ffbcd90a30a2/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -272,13 +218,13 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/okhttp-3.2.0_18de0f22b8abb440fecc309cf2e2a1d4ef0e0754/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/rxjava-1.1.2.jar"
+        jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.3.0_b87ef207ee33c83aedb78274a403d1fe9a074fa9.jar" />
+        sha1="d4f11e8e7dd89f5f87e5d81000582eabb071da91">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/rxjava-1.1.2_ca6377740bc1f0641a96ce0d78d5eb6adb0e1d2f/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -299,24 +245,6 @@
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/dji_eventbus_cde3e3041ec40b00ec110e23110f04ddb28d9b8e/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/sqlbrite-0.6.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="80411084d9962ab5b48b274bb4b49e063095535a">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/sqlbrite-0.6.2_37b2096fe2ec70736eed717a871ee704c5466bda.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_e4e98966eabc07e95fba5a5a9f9b7daeb89c74db.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/exploded-aar/FPVDemo/dJISDKLIB/unspecified/jars/libs/rxjava-1.1.2.jar"
         jumboMode="true"
@@ -324,24 +252,6 @@
         revision="23.0.2"
         sha1="d4f11e8e7dd89f5f87e5d81000582eabb071da91">
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/8/rxjava-1.1.2_8f1520fb51455dd2f3d5eb314eba24eae2964480/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="ef057ecd217c5842f5304a329aac8d1281b6d028">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/PhantomPilot-dJISDKLIB-unspecified_57c77d98c70f764c1980a0da3d49b33d5fb29e77.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
-        <dex dex="/home/guillaume/phantom_pilot/PhantomPilot/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_e1f0279d4c7ff4ee27546d47812d158f25840ba9.jar" />
     </item>
     <item
         is-multidex="true"
@@ -372,6 +282,33 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/converter-gson-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="56caaeea09d3e406f6160972ff5d3e6c0e6f139b">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/converter-gson-2.0.1_3bbbc3b96ec5eb3747ce8daae14161a0f9f7c1b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/dji-sdk.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1caeea6670e86792065a293010f09555d21d05e8">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/dji-sdk_3cd18194a445ed4b2df101a17a86659660a115a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_d55323660c48881b5d1eef62015f2fc991a6a7b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -381,12 +318,66 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_9e7d589a4d3cd20cfe479fb917c6cb66a2bc97b2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/retrofit-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b55150f9b025eebdddb6426bb4e85e673af338a3">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/retrofit-2.0.1_ee6aef1eb57ab1277de73e70d77c106bfeaf6a88/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/dji_eventbus.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="91a5399115cedf41ebd53be7c96e424ac3aed1a8">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/dji_eventbus_1080c016f941043ab38ddcae65582dda0fe08fbd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_776de5ebe58e4953169ec8ec7ea7b7cd01c7bc02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/dji_gson.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="729a9cf81838d286b6098dc9c33d264d5db48a26">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/dji_gson_71bd9eabd360cd140aa0e0e77a4baeedb3e93680/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
         <dex dex="/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_96dd21fbfb3b683f9f07c86715322cfdaaf5382b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/exploded-aar/PhantomPilot/dJISDKLIB/unspecified/jars/libs/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="03773badcb9e99ad699db657fa0e20cafbf774ef">
+        <dex dex="/home/guillaume/PhantomPilot/PhantomPilot/app/build/intermediates/transforms/dex/debug/folders/1000/8/okhttp-3.2.0_576b6f39607171f4c9a72251295441ce79136c53/classes.dex" />
     </item>
 
 </items>
