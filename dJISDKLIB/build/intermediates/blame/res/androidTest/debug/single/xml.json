@@ -6,5 +6,9 @@
     {
         "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
         "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
+    },
+    {
+        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
+        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
     }
 ]

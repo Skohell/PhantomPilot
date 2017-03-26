@@ -86,18 +86,6 @@
         android:background="@mipmap/joystick_bg"/>
 
     <Button
-   android:id="@+id/btn_capture"
-   android:layout_width="wrap_content"
-   android:layout_weight="1"
-   android:layout_gravity="center_vertical"
-   android:layout_height="wrap_content"
-   android:text="Photo"
-   android:textSize="12sp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/directionJoystickRight"
-        android:layout_marginEnd="23dp" />
-
-    <Button
         android:text="Atterrir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,15 +134,6 @@
         android:layout_below="@+id/btn_atterrir"
         android:layout_alignEnd="@+id/directionJoystickRight" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_atterrir"
-        android:layout_toStartOf="@+id/btn_capture"
-        android:layout_marginEnd="14dp"
-        android:id="@+id/debug" />
-
     <Button
         android:text="Home"
         android:layout_width="wrap_content"
@@ -168,73 +147,87 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_down"
-        android:layout_alignBottom="@+id/directionJoystickLeft"
-        android:layout_alignStart="@+id/button_left_up" />
-
-    <Button
-        android:text="Arriere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_right_down"
-        android:layout_alignBottom="@+id/directionJoystickRight"
-        android:layout_alignEnd="@+id/directionJoystickRight"
-        android:layout_marginEnd="18dp" />
-
-    <Button
-        android:text="Avant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_right_up"
-        android:layout_above="@+id/button_right_left"
-        android:layout_alignStart="@+id/button_right_down" />
-
-    <Button
-        android:text="Droite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_right_right"
-        android:layout_below="@+id/button_right_up"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="Gauche"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_right_left"
-        android:layout_above="@+id/btn_capture"
-        android:layout_toStartOf="@+id/button_right_right" />
+        android:layout_alignBaseline="@+id/btn_record"
+        android:layout_alignBottom="@+id/btn_record"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Rot.G"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_left"
-        android:layout_above="@+id/btn_record"
-        android:layout_alignEnd="@+id/battery_level" />
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/button_left_down" />
 
     <Button
         android:text="Rot.D"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_right"
-        android:layout_marginStart="21dp"
         android:layout_above="@+id/btn_record"
-        android:layout_toEndOf="@+id/button_left_left" />
+        android:layout_toEndOf="@+id/button_left_down" />
 
     <Button
         android:text="Haut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_left_up"
-        android:layout_alignTop="@+id/directionJoystickLeft"
-        android:layout_toEndOf="@+id/linearLayout" />
+        android:layout_alignBaseline="@+id/button_left_right"
+        android:layout_alignBottom="@+id/button_left_right"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Avant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_right_up"
+        android:layout_alignBaseline="@+id/button_right_right"
+        android:layout_alignBottom="@+id/button_right_right"
+        android:layout_alignEnd="@+id/directionJoystickRight" />
+
+    <Button
+        android:text="Droite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_right_right"
+
+        android:layout_above="@+id/btn_capture"
+        android:layout_toStartOf="@+id/button_right_up" />
+
+    <Button
+        android:text="Arriere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_right_down"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/button_right_right" />
+
+    <Button
+   android:id="@+id/btn_capture"
+   android:layout_width="wrap_content"
+   android:layout_weight="1"
+   android:layout_gravity="center_vertical"
+   android:layout_height="wrap_content"
+   android:text="Photo"
+   android:textSize="12sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/button_right_right" />
+
+    <Button
+        android:text="Gauche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_right_left"
+        android:layout_alignBaseline="@+id/btn_capture"
+        android:layout_alignBottom="@+id/btn_capture"
+        android:layout_alignStart="@+id/button_right_right" />
 
     <Button
         android:text="Arret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_right_down"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/button_arret" />
+        android:id="@+id/button_arret"
+        android:layout_above="@+id/button_right_left"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/src/debug/shaders"/></dataSet></merger>

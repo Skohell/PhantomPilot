@@ -30,6 +30,7 @@ import dji.common.flightcontroller.DJIFlightControllerCurrentState;
 import dji.common.flightcontroller.DJIFlightControllerDataType;
 import dji.common.flightcontroller.DJIFlightOrientationMode;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
+import dji.common.flightcontroller.DJIVirtualStickFlightCoordinateSystem;
 import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
 import dji.common.flightcontroller.DJIVirtualStickVerticalControlMode;
 import dji.common.flightcontroller.DJIVirtualStickYawControlMode;
@@ -83,7 +84,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private Button mrightDown;
     private Button mArret;
 
-    private TextView debug;
+
 
     /* --------------------------------------------------------------------------------*/
 
@@ -305,7 +306,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     private void initUI() {
 
-        debug = (TextView) findViewById(R.id.debug);
         // Retour vidéo
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
         if (null != mVideoSurface) {
@@ -354,6 +354,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mrightLeft.setOnClickListener(this);
         mrightRight.setOnClickListener(this);
         mrightUp.setOnClickListener(this);
+        mArret.setOnClickListener(this);
         mrightUp.setVisibility(View.INVISIBLE);
         mrightRight.setVisibility(View.INVISIBLE);
         mrightLeft.setVisibility(View.INVISIBLE);
@@ -388,7 +389,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
 
-                int time;
+
 
                 if (Math.abs(pX) < 0.02) {
                     pX = 0;
@@ -408,15 +409,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     mSendVirtualStickDataTask = new SendVirtualStickDataTask();
                     mSendVirtualStickDataTimer = new Timer();
 
-                    if(isJoystickVisible)
-                        time = 200;
-                    else
-                        time = 2000;
-
-                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 100, time);
+                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 100, 200);
                 }
 
-                debug.setText(mPitch + " " + mRoll + " " + mYaw + " " + mThrottle);
 
 
             }
@@ -428,7 +423,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
 
-                int time;
+
 
                 if(Math.abs(pX) < 0.02 ){
                     pX = 0;
@@ -448,16 +443,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 if (null == mSendVirtualStickDataTimer) {
                     mSendVirtualStickDataTask = new SendVirtualStickDataTask();
                     mSendVirtualStickDataTimer = new Timer();
-                    if(isJoystickVisible)
-                        time = 200;
-                    else
-                        time = 2000;
 
-                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, time);
+                    mSendVirtualStickDataTimer.schedule(mSendVirtualStickDataTask, 0, 200);
 
                 }
 
-                debug.setText(mPitch+" "+mRoll+" "+mYaw+ " "+mThrottle);
 
 
 
@@ -563,38 +553,47 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
             case R.id.button_arret:{
                 mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,0);
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,0);
                 break;
             }
             case R.id.button_left_up:{
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,0);
                 mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,1);
                 break;
             }
             case R.id.button_left_down:{
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,0);
                 mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,-1);
                 break;
             }
             case R.id.button_left_left:{
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,0);
                 mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,-1,0);
                 break;
             }
             case R.id.button_left_right:{
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,0);
                 mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,1,0);
                 break;
             }
             case R.id.button_right_up:{
-                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,1);
+                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,0);
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,1);
                 break;
             }
             case R.id.button_right_down:{
-                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,-1);
+                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,0);
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,-1);
                 break;
             }
             case R.id.button_right_right:{
-                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,1,0);
+                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,0);
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,1,0);
                 break;
             }
             case R.id.button_right_left:{
-                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,-1,0);
+                mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,0);
+                mScreenJoystickRightListener.onTouch(mScreenJoystickRight,-1,0);
                 break;
             }
 
@@ -692,18 +691,8 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     {
         if(FPVDemoApplication.isFlightControllerAvailable())
         {
-            /*
-            FPVDemoApplication.getAircraftInstance().getFlightController().setFlightOrientationMode(DJIFlightOrientationMode.DefaultAircraftHeading, new DJICommonCallbacks.DJICompletionCallback() {
-                @Override
-                public void onResult(DJIError djiError) {
-                    if(djiError!=null) {
-                        showToast(djiError.getDescription());
-                        Log.d("FLIGHT_MODE",djiError.getDescription());
-                    }
-                }
-            });
-            */
 
+            FPVDemoApplication.getAircraftInstance().getFlightController().setHorizontalCoordinateSystem(DJIVirtualStickFlightCoordinateSystem.Body);
             FPVDemoApplication.getAircraftInstance().getFlightController().setVerticalControlMode(DJIVirtualStickVerticalControlMode.Velocity);
             FPVDemoApplication.getAircraftInstance().getFlightController().setRollPitchControlMode(DJIVirtualStickRollPitchControlMode.Velocity);
             FPVDemoApplication.getAircraftInstance().getFlightController().setYawControlMode(DJIVirtualStickYawControlMode.AngularVelocity);
