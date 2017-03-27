@@ -1,74 +1,98 @@
 [
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_zoom_selector.xml",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_zoom_selector.xml"
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_checked.png",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_checked.png"
     },
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_lock_selector.xml",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_lock_selector.xml"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_lock_selector.xml",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_lock_selector.xml"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/radio_unchecked.png",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/radio_unchecked.png"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_unchecked.png",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_unchecked.png"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/radio_checked.png",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/radio_checked.png"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/ic_launcher.png",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/ic_launcher.png"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_radio_selector.xml",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_radio_selector.xml"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_zoom_selector.xml",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_zoom_selector.xml"
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_lock_selector.xml",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_lock_selector.xml"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_zoom_selector.xml",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_zoom_selector.xml"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_checked.png",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_checked.png"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/ic_launcher.png",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/ic_launcher.png"
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_unchecked.png",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_unchecked.png"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/radio_checked.png",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/radio_checked.png"
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_lock_selector.xml",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_lock_selector.xml"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/ic_launcher.png",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/ic_launcher.png"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_checked.png",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_checked.png"
     },
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_radio_selector.xml",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_radio_selector.xml"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_unchecked.png",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_unchecked.png"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_radio_selector.xml",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_radio_selector.xml"
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/radio_checked.png",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/radio_checked.png"
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_radio_selector.xml",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_radio_selector.xml"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_lock_selector.xml",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_lock_selector.xml"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_lock_selector.xml",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_lock_selector.xml"
     },
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/radio_unchecked.png",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/radio_unchecked.png"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_radio_selector.xml",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_radio_selector.xml"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/btn_radio_selector.xml",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/btn_radio_selector.xml"
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_lock_selector.xml",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_lock_selector.xml"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/drawable/radio_unchecked.png",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/drawable/radio_unchecked.png"
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_zoom_selector.xml",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_zoom_selector.xml"
+    },
+    {
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_checked.png",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_checked.png"
+    },
+    {
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\radio_unchecked.png",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\radio_unchecked.png"
+    },
+    {
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_zoom_selector.xml",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_zoom_selector.xml"
+    },
+    {
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_zoom_selector.xml",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_zoom_selector.xml"
+    },
+    {
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_zoom_selector.xml",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_zoom_selector.xml"
+    },
+    {
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\btn_radio_selector.xml",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_radio_selector.xml"
     }
 ]

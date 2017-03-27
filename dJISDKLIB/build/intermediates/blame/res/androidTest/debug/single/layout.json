@@ -1,26 +1,34 @@
 [
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/dialog_login.xml",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/layout/dialog_login.xml"
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\log_dialog_view.xml",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\log_dialog_view.xml"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/log_dialog_view.xml",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/layout/log_dialog_view.xml"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_login.xml",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_login.xml"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/log_dialog_view.xml",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/layout/log_dialog_view.xml"
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\log_dialog_view.xml",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\log_dialog_view.xml"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/dialog_login.xml",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/layout/dialog_login.xml"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_login.xml",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_login.xml"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/dialog_login.xml",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/layout/dialog_login.xml"
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_login.xml",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_login.xml"
     },
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/log_dialog_view.xml",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/layout/log_dialog_view.xml"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\log_dialog_view.xml",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\log_dialog_view.xml"
+    },
+    {
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\log_dialog_view.xml",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\log_dialog_view.xml"
+    },
+    {
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_login.xml",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_login.xml"
     }
 ]

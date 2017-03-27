@@ -16,13 +16,24 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
-
+/**
+ * Cette classe nous est donnée par DJI, elle permet d'avoir des joysticks fonctionnels qui
+ * renvoient les informations de l'utilisateur et gèrent la partie grapique.
+ * A nous par la suite de traiter les données des joysticks pour en faire ce que
+ * nous souhaitons.
+ */
 public class OnScreenJoystick extends SurfaceView implements
         SurfaceHolder.Callback, OnTouchListener {
+
+    // region Attributs graphiques
 
     private Bitmap mJoystick;
     private SurfaceHolder mHolder;
     private Rect mKnobBounds;
+
+    //endregion
+
+    //region Attributs
 
     private JoystickThread mThread;
 
@@ -35,6 +46,15 @@ public class OnScreenJoystick extends SurfaceView implements
 
     private boolean mAutoCentering = true;
 
+    //endregion
+
+    // region Constructeur(s)
+
+    /**
+     * Constructeur
+     * @param context
+     * @param attrs
+     */
     public OnScreenJoystick(Context context, AttributeSet attrs) {
         super(context, attrs);
 
@@ -42,6 +62,14 @@ public class OnScreenJoystick extends SurfaceView implements
         init();
     }
 
+    //endregion
+
+    //region Méthodes
+
+    /**
+     * Initialise la partie graphique via l'image en resource.
+     * @param attrs
+     */
     private void initGraphics(AttributeSet attrs) {
         Resources res = getContext().getResources();
         mJoystick = BitmapFactory
@@ -50,6 +78,10 @@ public class OnScreenJoystick extends SurfaceView implements
 
     }
 
+    /**
+     * Initialise les différentes tailles / limites de la partie graphique.
+     * @param pCanvas
+     */
     private void initBounds(final Canvas pCanvas) {
         mBackgroundSize = pCanvas.getHeight();
         mKnobSize = Math.round(mBackgroundSize * 0.6f);
@@ -62,6 +94,9 @@ public class OnScreenJoystick extends SurfaceView implements
 
     }
 
+    /**
+     * Initialise le fonctionnement du joystick.
+     */
     private void init() {
         mHolder = getHolder();
         mHolder.addCallback(this);
@@ -75,26 +110,49 @@ public class OnScreenJoystick extends SurfaceView implements
         setAutoCentering(true);
     }
 
+    /**
+     * Définit si le stick doit se recentrer ou non.
+     * @param pAutoCentering
+     */
     public void setAutoCentering(final boolean pAutoCentering) {
         mAutoCentering = pAutoCentering;
     }
 
+    /**
+     * Permet de savoir si le stick se recentre ou non.
+     * @return le stick se recentre ou non.
+     */
     public boolean isAutoCentering() {
         return mAutoCentering;
     }
 
+    /**
+     * Setter du OnScreenJoystickListener
+     * @param pJoystickListener
+     */
     public void setJoystickListener(
             final OnScreenJoystickListener pJoystickListener) {
         mJoystickListener = pJoystickListener;
     }
 
+    /**
+     * Comportement au changement de surface.
+     * @param arg0
+     * @param arg1
+     * @param arg2
+     * @param arg3
+     */
     @Override
     public void surfaceChanged(final SurfaceHolder arg0, final int arg1,
                                final int arg2, final int arg3) {
 
-//		mThread.setRunning(false);
+
     }
 
+    /**
+     * Comportement à la création de la surface.
+     * @param arg0
+     */
     @Override
     public void surfaceCreated(final SurfaceHolder arg0) {
         mThread = new JoystickThread();
@@ -102,6 +160,10 @@ public class OnScreenJoystick extends SurfaceView implements
 
     }
 
+    /**
+     * Comportement à la destruction de la surface.
+     * @param arg0
+     */
     @Override
     public void surfaceDestroyed(final SurfaceHolder arg0) {
         boolean retry = true;
@@ -118,6 +180,10 @@ public class OnScreenJoystick extends SurfaceView implements
 
     }
 
+    /**
+     * Méthode qui dessine le stick sur la vue.
+     * @param pCanvas
+     */
     public void doDraw(final Canvas pCanvas) {
         if (mKnobBounds == null) {
             initBounds(pCanvas);
@@ -130,8 +196,16 @@ public class OnScreenJoystick extends SurfaceView implements
 
     }
 
+    /**
+     * Comportement lors de l'appui sur un stick qui calcule les coordonnées x et y correspondantes.
+     * @param arg0
+     * @param pEvent
+     * @return
+     */
     @Override
-    public boolean onTouch(final View arg0, final MotionEvent pEvent) {
+    public boolean onTouch(final View arg0, final MotionEvent pEvent)
+    {
+
         final float x = pEvent.getX();
         final float y = pEvent.getY();
 
@@ -144,8 +218,6 @@ public class OnScreenJoystick extends SurfaceView implements
                 }
                 break;
             default:
-                // Check if coordinates are in bounds. If they aren't move the knob
-                // to the closest coordinate inbounds.
                 if (checkBounds(x, y)) {
                     mKnobX = Math.round(x - mKnobSize * 0.5f);
                     mKnobY = Math.round(y - mKnobSize * 0.5f);
@@ -158,7 +230,10 @@ public class OnScreenJoystick extends SurfaceView implements
                 }
         }
 
-        if (mJoystickListener != null) {
+        if (mJoystickListener != null)
+        {
+            // On appelle la méthode onTouch du JoystickListener avec les coordonnées x et y du stick.
+            // C'est dans cette méthode qu'on gérera le comportement voulu.
             mJoystickListener.onTouch(this,
                     (0.5f - (mKnobX / (mRadius * 2 - mKnobSize))) * -2,
                     (0.5f - (mKnobY / (mRadius * 2 - mKnobSize))) * 2);
@@ -168,11 +243,20 @@ public class OnScreenJoystick extends SurfaceView implements
         return true;
     }
 
+    /**
+     * Permet de savoir si on est en dehors des limites du stick.
+     * @param pX
+     * @param pY
+     * @return
+     */
     private boolean checkBounds(final float pX, final float pY) {
         return Math.pow(mRadius - pX, 2) + Math.pow(mRadius - pY, 2) <= Math
                 .pow(mRadius - mKnobSize * 0.5f, 2);
     }
 
+    /**
+     * Méthode qui envoie les informations du stick au Listener.
+     */
     private void pushTouchEvent(){
 
         if (mJoystickListener != null) {
@@ -183,6 +267,13 @@ public class OnScreenJoystick extends SurfaceView implements
         }
     }
 
+    //endregion
+
+    //region Classe interne
+
+    /**
+     * Classe gérant le thread dessinant le stick en temps réel.
+     */
     private class JoystickThread extends Thread {
 
         private boolean running = false;
@@ -200,12 +291,10 @@ public class OnScreenJoystick extends SurfaceView implements
         @Override
         public void run() {
             while (running) {
-                // draw everything to the canvas
                 Canvas canvas = null;
                 try {
                     canvas = mHolder.lockCanvas(null);
                     synchronized (mHolder) {
-                        // reset canvas
                         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
                         doDraw(canvas);
                     }
@@ -217,18 +306,10 @@ public class OnScreenJoystick extends SurfaceView implements
                     }
                 }
 
-//				pushTouchEvent();
-
-//				try
-//                {
-//                    Thread.sleep(100);
-//                } catch (InterruptedException e)
-//                {
-//                    // TODO Auto-generated catch block
-//                    e.printStackTrace();
-//                }
             }
         }
     }
+
+    //endregion
 
 }

@@ -65,7 +65,7 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
         // Méthode d'initialisation de l'affichage.
         initUI();
 
-
+        // Le Receiver mettra à jour l'affichage quand nécessaire.
         mReceiver = new BroadcastReceiver()
         {
             @Override
@@ -141,10 +141,8 @@ public class ConnectionActivity extends AppCompatActivity implements View.OnClic
             button_Ouvrir.setEnabled(true);
 
             // On met à jour les différents affichages avec les informations de l'appareil.
-
             String mTypeProduit = mProduct instanceof DJIAircraft ? "DJIAircraft" : "DJIHandHeld";
-            textview_EtatConnexion.setText("Status: " + mTypeProduit + " connecté");
-
+            textview_EtatConnexion.setText("Status: " + mTypeProduit + " connecté.");
             if (mProduct.getModel() != null) {
                 textview_EtatProduit.setText(mProduct.getModel().getDisplayName());
             } else {

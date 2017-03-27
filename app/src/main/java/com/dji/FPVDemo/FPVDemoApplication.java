@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.widget.Toast;
 
 import dji.sdk.camera.DJICamera;
@@ -19,7 +18,10 @@ import dji.sdk.base.DJIBaseProduct.DJIComponentKey;
 import dji.common.error.DJIError;
 import dji.common.error.DJISDKError;
 
-public class FPVDemoApplication extends Application{
+public class FPVDemoApplication extends Application
+{
+
+    //region Attributs
 
     public static final String FLAG_CONNECTION_CHANGE = "connection_change";
 
@@ -29,102 +31,31 @@ public class FPVDemoApplication extends Application{
     private Handler mHandler;
 
     /**
-     * Getter du produit.
-     * @return instance de produit
-     */
-    public static synchronized DJIBaseProduct getProductInstance() {
-        if (null == mProduct) {
-            mProduct = DJISDKManager.getInstance().getDJIProduct();
-        }
-        return mProduct;
-    }
-
-    public static boolean isAircraftConnected() {
-        return getProductInstance() != null && getProductInstance() instanceof DJIAircraft;
-    }
-
-    public static boolean isHandHeldConnected() {
-        return getProductInstance() != null && getProductInstance() instanceof DJIHandHeld;
-    }
-
-    public static synchronized DJIAircraft getAircraftInstance() {
-        if (!isAircraftConnected()) return null;
-        return (DJIAircraft) getProductInstance();
-    }
-
-    public static synchronized DJIHandHeld getHandHeldInstance() {
-        if (!isHandHeldConnected()) return null;
-        return (DJIHandHeld) getProductInstance();
-    }
-
-    public static boolean isFlightControllerAvailable() {
-        return isProductModuleAvailable() && isAircraft() &&
-                (null != FPVDemoApplication.getAircraftInstance().getFlightController());
-    }
-    public static boolean isProductModuleAvailable() {
-        return (null != FPVDemoApplication.getProductInstance());
-    }
-
-    public static boolean isAircraft() {
-        return FPVDemoApplication.getProductInstance() instanceof DJIAircraft;
-    }
-
-    /**
-     * Getter de la camera de notre produit.
-     * @return camera du produit
-     */
-    public static synchronized DJICamera getCameraInstance() {
-
-        if (getProductInstance() == null) return null;
-
-        DJICamera camera = null;
-
-        if (getProductInstance() instanceof DJIAircraft){
-            camera = ((DJIAircraft) getProductInstance()).getCamera();
-
-        } else if (getProductInstance() instanceof DJIHandHeld) {
-            camera = ((DJIHandHeld) getProductInstance()).getCamera();
-        }
-
-        return camera;
-    }
-
-
-
-    @Override
-    public void onCreate() {
-
-        super.onCreate();
-
-        mHandler = new Handler(Looper.getMainLooper());
-
-        // Initialise le DJISDKManager.
-        DJISDKManager.getInstance().initSDKManager(this, mDJISDKManagerCallback);
-    }
-
-    /**
      * Instance (obligatoire) permettant d'avoir un retour sur la connexion au sdk.
      */
-    private DJISDKManager.DJISDKManagerCallback mDJISDKManagerCallback = new DJISDKManager.DJISDKManagerCallback() {
-
-        // Obtient le résultat.
+    private DJISDKManager.DJISDKManagerCallback mDJISDKManagerCallback = new DJISDKManager.DJISDKManagerCallback()
+    {
+        // Obtient le résultat de la connexion.
         @Override
-        public void onGetRegisteredResult(DJIError error) {
-
-            if(error == DJISDKError.REGISTRATION_SUCCESS) {
-
+        public void onGetRegisteredResult(DJIError error)
+        {
+            // Si c'est un succès.
+            if(error == DJISDKError.REGISTRATION_SUCCESS)
+            {
                 Handler handler = new Handler(Looper.getMainLooper());
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(), "Connecté au SDK", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Connecté au SDK.", Toast.LENGTH_LONG).show();
                     }
                 });
 
                 DJISDKManager.getInstance().startConnectionToProduct();
 
-            } else {
-
+            }
+            // Si c'est un échec.
+            else
+            {
                 Handler handler = new Handler(Looper.getMainLooper());
                 handler.post(new Runnable() {
 
@@ -135,8 +66,6 @@ public class FPVDemoApplication extends Application{
                 });
 
             }
-            Log.e("TAG", error.toString());
-
             DJISDKManager.getInstance().startConnectionToProduct();
         }
 
@@ -153,7 +82,11 @@ public class FPVDemoApplication extends Application{
         }
     };
 
-    private DJIBaseProductListener mDJIBaseProductListener = new DJIBaseProductListener() {
+    /**
+     * Permet de savoir quand il y a un changement de produit.
+     */
+    private DJIBaseProductListener mDJIBaseProductListener = new DJIBaseProductListener()
+    {
 
         @Override
         public void onComponentChange(DJIComponentKey key, DJIBaseComponent oldComponent, DJIBaseComponent newComponent) {
@@ -161,6 +94,7 @@ public class FPVDemoApplication extends Application{
             if(newComponent != null) {
                 newComponent.setDJIComponentListener(mDJIComponentListener);
             }
+            // On notifie qu'il y a eu un changement.
             notifyStatusChange();
         }
 
@@ -172,6 +106,9 @@ public class FPVDemoApplication extends Application{
 
     };
 
+    /**
+     * Permet de savoir quand il y a un changement de connexion.
+     */
     private DJIComponentListener mDJIComponentListener = new DJIComponentListener() {
 
         @Override
@@ -181,11 +118,123 @@ public class FPVDemoApplication extends Application{
 
     };
 
-    private void notifyStatusChange() {
+    //endregion
+
+    //region Méthodes
+
+        //region Vérifications
+
+    /**
+     * Obtient le statut de connexion du produit en tant qu'Aircraft.
+     * @return statut de connexion du produit en tant qu'Aircraft.
+     */
+    public static boolean isAircraftConnected() {
+        return getProductInstance() != null && getProductInstance() instanceof DJIAircraft;
+    }
+
+    /**
+     * Obtient le statut de connexion du produit en tant qu'HandHeld.
+     * @return statut de connexion du produit en tant qu'HandHeld.
+     */
+    public static boolean isHandHeldConnected() {
+        return getProductInstance() != null && getProductInstance() instanceof DJIHandHeld;
+    }
+
+    /**
+     * Indique si le FlightController est disponible ou non.
+     * @return FlightController est disponible ou non.
+     */
+    public static boolean isFlightControllerAvailable() {
+        return isProductModuleAvailable() && isAircraft() && (FPVDemoApplication.getAircraftInstance().getFlightController() != null);
+    }
+
+    /**
+     * Indique si le produit est disponible ou non.
+     * @return produit est disponible ou non.
+     */
+    public static boolean isProductModuleAvailable() {
+        return (FPVDemoApplication.getProductInstance() != null);
+    }
+
+    /**
+     * Indique si le produit est de type Aircraft.
+     * @return si le produit est de type Aircraft.
+     */
+    public static boolean isAircraft() {
+        return FPVDemoApplication.getProductInstance() instanceof DJIAircraft;
+    }
+
+        //endregion
+
+        //region Getters
+
+    /**
+     * Getter du produit.
+     * @return instance de produit
+     */
+    public static synchronized DJIBaseProduct getProductInstance() {
+        if (mProduct == null) {
+            mProduct = DJISDKManager.getInstance().getDJIProduct();
+        }
+        return mProduct;
+    }
+
+    /**
+     * Retourne l'instance de produit en tant que DJIAircraft.
+     * @return instance de produit en tant que DJIAircraft.
+     */
+    public static synchronized DJIAircraft getAircraftInstance() {
+        if(!isAircraftConnected())
+            return null;
+        return (DJIAircraft) getProductInstance();
+    }
+
+    /**
+     * Retourne l'instance de produit en tant que DJIHandHeld.
+     * @return instance de produit en tant que DJIHandHeld.
+     */
+    public static synchronized DJIHandHeld getHandHeldInstance() {
+        if (!isHandHeldConnected())
+            return null;
+        return (DJIHandHeld) getProductInstance();
+    }
+
+    /**
+     * Getter de la camera de notre produit.
+     * @return camera du produit.
+     */
+    public static synchronized DJICamera getCameraInstance()
+    {
+        if (getProductInstance() == null)
+            return null;
+
+        DJICamera camera = null;
+
+        if (getProductInstance() instanceof DJIAircraft){
+            camera = ((DJIAircraft) getProductInstance()).getCamera();
+
+        } else if (getProductInstance() instanceof DJIHandHeld) {
+            camera = ((DJIHandHeld) getProductInstance()).getCamera();
+        }
+
+        return camera;
+    }
+
+        //endregion
+
+    /**
+     * Méthode appelée pour notifier d'un changement de connexion.
+     */
+    private void notifyStatusChange()
+    {
+        // On utilise le Handler pour envoyer un message.
         mHandler.removeCallbacks(updateRunnable);
         mHandler.postDelayed(updateRunnable, 500);
     }
 
+    /**
+     * Est utilisé pour signaler que la connexion a changé, notamment à la ConnectionActivity.
+     */
     private Runnable updateRunnable = new Runnable() {
         @Override
         public void run() {
@@ -193,5 +242,21 @@ public class FPVDemoApplication extends Application{
             sendBroadcast(intent);
         }
     };
+    //endregion
+
+    //region Cycle de Vie Android
+
+    @Override
+    public void onCreate() {
+
+        super.onCreate();
+
+        mHandler = new Handler(Looper.getMainLooper());
+
+        // Initialise le DJISDKManager.
+        DJISDKManager.getInstance().initSDKManager(this, mDJISDKManagerCallback);
+    }
+
+    //endregion
 
 }

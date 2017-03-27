@@ -1,14 +1,18 @@
 [
     {
-        "merged": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
-        "source": "/home/guillaume/AndroidStudioProjects/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
+        "merged": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\accessory_filter.xml",
+        "source": "G:\\home\\guillaume\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\xml\\accessory_filter.xml"
     },
     {
-        "merged": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
-        "source": "/home/guillaume/phantom_pilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
+        "merged": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\accessory_filter.xml",
+        "source": "G:\\home\\guillaume\\phantom_pilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\xml\\accessory_filter.xml"
     },
     {
-        "merged": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
-        "source": "/home/guillaume/PhantomPilot/PhantomPilot/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
+        "merged": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\accessory_filter.xml",
+        "source": "G:\\home\\guillaume\\AndroidStudioProjects\\Android-FPVDemo-master\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\xml\\accessory_filter.xml"
+    },
+    {
+        "merged": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\accessory_filter.xml",
+        "source": "G:\\Work\\PhantomPilot\\PhantomPilot\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\xml\\accessory_filter.xml"
     }
 ]

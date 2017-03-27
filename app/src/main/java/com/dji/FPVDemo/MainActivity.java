@@ -28,7 +28,6 @@ import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
 import dji.common.flightcontroller.DJIFlightControllerCurrentState;
 import dji.common.flightcontroller.DJIFlightControllerDataType;
-import dji.common.flightcontroller.DJIFlightOrientationMode;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
 import dji.common.flightcontroller.DJIVirtualStickFlightCoordinateSystem;
 import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
@@ -46,14 +45,12 @@ import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
 
 public class MainActivity extends Activity implements SurfaceTextureListener,OnClickListener{
 
+    //region Attributs graphiques
 
-
-
-    /* ------------------------------ ELEMENTS GRAPHIQUES ------------------------------*/
-    // Retour vidéo
+    // Retour vidéo.
     protected TextureView mVideoSurface = null;
 
-    // Médias
+    // Médias.
     private Button mCaptureBtn, mShootPhotoModeBtn, mRecordVideoModeBtn;
     private ToggleButton mRecordBtn;
     private TextView recordingTime;
@@ -66,14 +63,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private TextView mbattery_level;
     private TextView mgps;
 
-    //Joysticks
+    // Joysticks.
     private OnScreenJoystick mScreenJoystickRight;
     private OnScreenJoystick mScreenJoystickLeft;
 
-    private OnScreenJoystickListener mScreenJoystickRightListener;
-    private OnScreenJoystickListener mScreenJoystickLeftListener;
-
-
+    // Touches séquentielles.
     private Button mleftUp;
     private Button mleftLeft;
     private Button mleftRight;
@@ -84,16 +78,19 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private Button mrightDown;
     private Button mArret;
 
+    //endregion
 
+    //region Attributs
 
-    /* --------------------------------------------------------------------------------*/
-
-    /* ------------------------------- ATTRIBUTS ------------------------------------- */
+    // Listeners des sticks.
+    private OnScreenJoystickListener mScreenJoystickRightListener;
+    private OnScreenJoystickListener mScreenJoystickLeftListener;
 
     private boolean isJoystickVisible = true;
 
     private static final String TAG = MainActivity.class.getName();
 
+    // Retour de la caméra.
     protected DJICamera.CameraReceivedVideoDataCallback mReceivedVideoDataCallBack = null;
 
     // Codec pour la vidéo
@@ -105,16 +102,16 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     private float mYaw;
     private float mThrottle;
 
+    // Buffers pour afficher GPS, altitude et batterie.
     protected StringBuffer mBatteryStringBuffer;
     protected StringBuffer mGpsStringBuffer;
-    protected static final int CHANGE_TEXT_VIEW = 0;
 
-
-
+    // Pour gérer l'envoi des infos des sticks au drone.
     private Timer mSendVirtualStickDataTimer;
     private SendVirtualStickDataTask mSendVirtualStickDataTask;
 
-
+    // Gère l'affichage GPS, altitude et batterie.
+    protected static final int CHANGE_TEXT_VIEW = 0;
     protected Handler mHandler = new Handler(new Handler.Callback() {
 
         @Override
@@ -132,12 +129,14 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         }
     });
 
-    /* ----------------------------------------------------------------------------------*/
+    //endregion
 
+    //region Cycle de vie Android
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // On met la vue en plein écran.
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT < 16) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -156,34 +155,38 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         setContentView(R.layout.activity_main);
 
-
+        // Initialisation de la vue.
         initUI();
 
         mBatteryStringBuffer = new StringBuffer();
         mGpsStringBuffer = new StringBuffer();
 
-        // The callback for receiving the raw H264 video data for camera live view
+        //  Callback qui reçoit les données de la caméra en H264
         mReceivedVideoDataCallBack = new CameraReceivedVideoDataCallback() {
 
             @Override
             public void onResult(byte[] videoBuffer, int size) {
                 if(mCodecManager != null){
-                    // Send the raw H264 video data to codec manager for decoding
+                    // On envoie le flux au codec manager pour être décodé
                     mCodecManager.sendDataToDecoder(videoBuffer, size);
                 }else {
-                    Log.e(TAG, "mCodecManager is null");
+                    Log.e(TAG, "pas de codec manager");
                 }
             }
         };
 
-        DJICamera camera = FPVDemoApplication.getCameraInstance();
 
+        DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
 
             camera.setDJICameraUpdatedSystemStateCallback(new DJICamera.CameraUpdatedSystemStateCallback() {
+                /**
+                 * Retour de la caméra, si on filme, qui actualise le timer d'enregistrement.
+                 * @param cameraSystemState
+                 */
                 @Override
                 public void onResult(CameraSystemState cameraSystemState) {
-                    if (null != cameraSystemState) {
+                    if (cameraSystemState != null) {
 
                         int recordTime = cameraSystemState.getCurrentVideoRecordingTimeInSeconds();
                         int minutes = (recordTime % 3600) / 60;
@@ -199,9 +202,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
                                 recordingTime.setText(timeString);
 
-                                /*
-                                 * Update recordingTime TextView visibility and mRecordBtn's check state
-                                 */
                                 if (isVideoRecording){
                                     recordingTime.setVisibility(View.VISIBLE);
                                 }else
@@ -217,6 +217,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         }
 
         try {
+            /**
+             * On veut actualiser notre textview à chaque changement d'état de la batterie.
+             */
             FPVDemoApplication.getProductInstance().getBattery().setBatteryStateUpdateCallback(
                     new DJIBattery.DJIBatteryStateUpdateCallback() {
                         @Override
@@ -232,6 +235,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     }
             );
 
+            /**
+             * On veut actualiser notre textview à chaque changement d'état de la position.
+             */
             FPVDemoApplication.getAircraftInstance().getFlightController().setUpdateSystemStateCallback(new DJIFlightControllerDelegate.FlightControllerUpdateSystemStateCallback() {
                 @Override
                 public void onResult(DJIFlightControllerCurrentState djiFlightControllerCurrentState) {
@@ -258,13 +264,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         }
 
-
+        // On active les sticks.
         activerJoysticks();
 
-    }
-
-    protected void onProductChange() {
-        initPreviewer();
     }
 
     @Override
@@ -275,7 +277,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         onProductChange();
 
         if(mVideoSurface == null) {
-            Log.e(TAG, "mVideoSurface is null");
+            Log.e(TAG, "pas de surface vidéo");
         }
     }
 
@@ -304,6 +306,20 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         super.onDestroy();
     }
 
+    //endregion
+
+    //region Méthodes
+
+    /**
+     * En cas de changement de connexion on réinitialise la vue.
+     */
+    protected void onProductChange() {
+        initPreviewer();
+    }
+
+    /**
+     * Méthode d'initialisation de la vue.
+     */
     private void initUI() {
 
         // Retour vidéo
@@ -316,9 +332,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         recordingTime = (TextView) findViewById(R.id.timer);
         mCaptureBtn = (Button) findViewById(R.id.btn_capture);
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
+
         /*
         mShootPhotoModeBtn = (Button) findViewById(R.id.btn_shoot_photo_mode);
-        mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);*/
+        mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);
+        */
 
         mdecollerBtn = (Button) findViewById(R.id.btn_decoller);
         matterrirBtn = (Button) findViewById(R.id.btn_atterrir);
@@ -364,8 +382,10 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mleftDown.setVisibility(View.INVISIBLE);
         mleftUp.setVisibility(View.INVISIBLE);
         mArret.setVisibility(View.INVISIBLE);
-       /* mShootPhotoModeBtn.setOnClickListener(this);
-        mRecordVideoModeBtn.setOnClickListener(this);*/
+       /*
+       mShootPhotoModeBtn.setOnClickListener(this);
+       mRecordVideoModeBtn.setOnClickListener(this);
+        */
 
         recordingTime.setVisibility(View.INVISIBLE);
 
@@ -384,13 +404,22 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mScreenJoystickRight = (OnScreenJoystick)findViewById(R.id.directionJoystickRight);
         mScreenJoystickLeft = (OnScreenJoystick)findViewById(R.id.directionJoystickLeft);
 
+        /**
+         * On attribue le listener au stick droit.
+         */
         mScreenJoystickRightListener = new OnScreenJoystickListener() {
 
+            /**
+             * Méthode qui sera appelée à chaque appui sur le stick.
+             * @param joystick
+             * @param pX
+             * @param pY
+             */
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
 
-
-
+                // Si le stick n'est que très légèrement non centré ( non voulu ) on considère
+                // qu'il est centré.
                 if (Math.abs(pX) < 0.02) {
                     pX = 0;
                 }
@@ -398,13 +427,16 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 if (Math.abs(pY) < 0.02) {
                     pY = 0;
                 }
+
+                // On récupère les valeurs maximales pour le drone de chaque type de controle.
                 float pitchJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMaxVelocity;
                 float rollJoyControlMaxSpeed = DJIFlightControllerDataType.DJIVirtualStickRollPitchControlMaxVelocity;
 
+                // On transforme les coordonnées du stick en valeurs pour le drone.
                 mPitch = (float) (pitchJoyControlMaxSpeed * pY);
-
                 mRoll = (float) (rollJoyControlMaxSpeed * pX);
 
+                // On envoie ces valeurs au drone.
                 if (null == mSendVirtualStickDataTimer) {
                     mSendVirtualStickDataTask = new SendVirtualStickDataTask();
                     mSendVirtualStickDataTimer = new Timer();
@@ -418,12 +450,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         };
         mScreenJoystickRight.setJoystickListener(mScreenJoystickRightListener);
 
+        // Même fonctionnement que pour le stick droit.
         mScreenJoystickLeftListener = new OnScreenJoystickListener() {
 
             @Override
             public void onTouch(OnScreenJoystick joystick, float pX, float pY) {
-
-
 
                 if(Math.abs(pX) < 0.02 ){
                     pX = 0;
@@ -458,6 +489,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     }
 
+    /**
+     * Méthode d'initialisation du retour vidéo.
+     */
     private void initPreviewer() {
 
         DJIBaseProduct product = FPVDemoApplication.getProductInstance();
@@ -465,30 +499,38 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         if (product == null || !product.isConnected()) {
             showToast(getString(R.string.disconnected));
         } else {
-            if (null != mVideoSurface) {
+            if (mVideoSurface != null) {
                 mVideoSurface.setSurfaceTextureListener(this);
             }
             if (!product.getModel().equals(Model.UnknownAircraft)) {
                 DJICamera camera = product.getCamera();
                 if (camera != null){
-                    // Set the callback
                     camera.setDJICameraReceivedVideoDataCallback(mReceivedVideoDataCallBack);
                 }
             }
         }
     }
 
+    /**
+     * Désatribution du retour vidéo.
+     */
     private void uninitPreviewer() {
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null){
-            // Reset the callback
             FPVDemoApplication.getCameraInstance().setDJICameraReceivedVideoDataCallback(null);
         }
     }
 
+    /**
+     * Comportement quand une surface est disponible.
+     * @param surface
+     * @param width
+     * @param height
+     */
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
         Log.e(TAG, "onSurfaceTextureAvailable");
+        // on crée un codec manager s'il le faut.
         if (mCodecManager == null) {
             mCodecManager = new DJICodecManager(this, surface, width, height);
         }
@@ -499,6 +541,11 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         Log.e(TAG, "onSurfaceTextureSizeChanged");
     }
 
+    /**
+     * Comportement à la destruction de la surface.
+     * @param surface
+     * @return
+     */
     @Override
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
         Log.e(TAG,"onSurfaceTextureDestroyed");
@@ -506,7 +553,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             mCodecManager.cleanSurface();
             mCodecManager = null;
         }
-
         return false;
     }
 
@@ -514,6 +560,10 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
     }
 
+    /**
+     * Méthode facilitant l'utilisation des toast dans le code.
+     * @param msg
+     */
     public void showToast(final String msg) {
         runOnUiThread(new Runnable() {
             public void run() {
@@ -521,6 +571,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             }
         });
     }
+
 
     /**
      * Méthode de gestion des clics des boutons sur la vue.
@@ -551,6 +602,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 break;
             }
 
+            // Pour toutes les touches séquentielles, nous émulons une utilisation des sticks.
             case R.id.button_arret:{
                 mScreenJoystickLeftListener.onTouch(mScreenJoystickLeft,0,0);
                 mScreenJoystickRightListener.onTouch(mScreenJoystickRight,0,0);
@@ -596,9 +648,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 mScreenJoystickRightListener.onTouch(mScreenJoystickRight,-1,0);
                 break;
             }
-
-
-
 
             /*
             case R.id.btn_shoot_photo_mode:{
@@ -684,6 +733,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         }
     }
 
+
     /**
      * Méthode permettant d'acitver le contrôle du drone par les joysticks.
      */
@@ -692,6 +742,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         if(FPVDemoApplication.isFlightControllerAvailable())
         {
 
+            // On attribue toutes les caractéristiques de controle jugées durant la phase d'analyse comme idéales.
             FPVDemoApplication.getAircraftInstance().getFlightController().setHorizontalCoordinateSystem(DJIVirtualStickFlightCoordinateSystem.Body);
             FPVDemoApplication.getAircraftInstance().getFlightController().setVerticalControlMode(DJIVirtualStickVerticalControlMode.Velocity);
             FPVDemoApplication.getAircraftInstance().getFlightController().setRollPitchControlMode(DJIVirtualStickRollPitchControlMode.Velocity);
@@ -713,23 +764,18 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                         }
                 );
 
-
-
-
-
-
             //}
-
         }
         else
         {
             showToast("Erreur : Joysticks non activés.");
         }
-
     }
 
 
-    private void switchCameraMode(DJICameraSettingsDef.CameraMode cameraMode){
+    // Méthode non utilisée à l'avancé du projet actuelle
+    private void switchCameraMode(DJICameraSettingsDef.CameraMode cameraMode)
+    {
 
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -738,7 +784,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                 public void onResult(DJIError error) {
 
                     if (error == null) {
-                        showToast("Switch Camera Mode Succeeded");
+                        showToast("Mode de caméra changé.");
                     } else {
                         showToast(error.getDescription());
                     }
@@ -748,15 +794,20 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     }
 
-    // Method for taking photo
-    private void captureAction(){
+    /**
+     *  Méthode de prise de photo intégrée mais non testée en profondeur.
+     *  Les photos se prennent sur la carte SD du drone et ne sont pas récupérées
+     *  sur le téléphone.
+     */
+    private void captureAction()
+    {
 
         DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.ShootPhoto;
 
         final DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
 
-            DJICameraSettingsDef.CameraShootPhotoMode photoMode = DJICameraSettingsDef.CameraShootPhotoMode.Single; // Set the camera capture mode as Single mode
+            DJICameraSettingsDef.CameraShootPhotoMode photoMode = DJICameraSettingsDef.CameraShootPhotoMode.Single;
             camera.startShootPhoto(photoMode, new DJICommonCallbacks.DJICompletionCallback() {
 
                 @Override
@@ -768,13 +819,17 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     }
                 }
 
-            }); // Execute the startShootPhoto API
+            });
         }
     }
 
-    // Method for starting recording
-    private void startRecord(){
-
+    /**
+     * Methode de prise de vidéo intégrée mais non testée en profondeur.
+     * L'enregistrement se fait sur carte SD du drone mais affiche parfois
+     * un message d'erreur.
+     */
+    private void startRecord()
+    {
         DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.RecordVideo;
         final DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -788,13 +843,15 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                         showToast(error.getDescription());
                     }
                 }
-            }); // Execute the startRecordVideo API
+            });
         }
     }
 
-    // Method for stopping recording
-    private void stopRecord(){
-
+    /**
+     * Arrêt de l'enregistrement vidéo.
+     */
+    private void stopRecord()
+    {
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
             camera.stopRecordVideo(new DJICommonCallbacks.DJICompletionCallback(){
@@ -813,6 +870,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     }
 
+    /**
+     * Méthode permettant de switcher de mode stick / touches.
+     */
     private void switchControl()
     {
 
@@ -849,8 +909,13 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         }
     }
 
+    //endregion
 
+    //region Classe interne
 
+    /**
+     * Classe permettant l'envoit des données des sticks au drone.
+     */
     class SendVirtualStickDataTask extends TimerTask {
 
         @Override
@@ -872,11 +937,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     }
 
 
-
-
-
-
-
-
+    //endregion
 
 }

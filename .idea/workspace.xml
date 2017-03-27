@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b472539c-6562-4d45-916a-e265734d0837" name="Default" comment="" />
+    <list default="true" id="08e212af-723d-4e3f-a462-fc3f9ed47f5c" name="Default" comment="" />
     <ignored path="PhantomPilot.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,27 +31,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="548" column="40" selection-start-line="548" selection-start-column="40" selection-end-line="548" selection-end-column="40" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_connection.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_connection.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
-                <marker date="1490524839651" expanded="false" signature="13547:13683" ph="(OnScreenJoystickListener) (joystick, pX, pY) → {" />
-                <marker date="1490524839651" expanded="false" signature="14696:14832" ph="(OnScreenJoystickListener) (joystick, pX, pY) → {" />
+                <element signature="e#599#628#0" expanded="false" />
+                <element signature="e#948#966#0" expanded="false" />
+                <element signature="e#1033#1063#0" expanded="false" />
+                <element signature="method#onCreate#0;class#ConnectionActivity#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#ConnectionActivity#0" expanded="false" />
+                <element signature="e#3275#3292#0" expanded="false" />
+                <element signature="method#initUI#0;class#ConnectionActivity#0" expanded="false" />
+                <element signature="method#updateUI#0;class#ConnectionActivity#0" expanded="false" />
+                <element signature="method#onClick#0;class#ConnectionActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
+      <file leaf-file-name="FPVDemoApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+              <folding>
+                <element signature="e#695#713#0" expanded="false" />
+                <element signature="docComment;field#mDJISDKManagerCallback#0;class#FPVDemoApplication#0" expanded="false" />
+                <element signature="class#1087:2666" expanded="false" />
+                <element signature="e#1472#1709#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
+                <element signature="docComment;field#mDJIBaseProductListener#0;class#FPVDemoApplication#0" expanded="false" />
+                <element signature="class#2813:3357" expanded="false" />
+                <element signature="method#onComponentChange#0;class#2813:3357" expanded="false" />
+                <element signature="method#onProductConnectivityChanged#0;class#2813:3357" expanded="false" />
+                <element signature="docComment;field#mDJIComponentListener#0;class#FPVDemoApplication#0" expanded="false" />
+                <element signature="e#3694#3711#0" expanded="false" />
+                <element signature="e#7187#7364#0" expanded="true" />
+                <element signature="e#7363#7364#0" expanded="true" />
+                <element signature="e#7387#7416#0" expanded="false" />
+                <element signature="method#onCreate#0;class#FPVDemoApplication#0" expanded="false" />
+              </folding>
+            </state>
           </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="178" column="4" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
+        </entry>
+      </file>
+      <file leaf-file-name="OnScreenJoystickListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystickListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,9 +123,97 @@
       <file leaf-file-name="OnScreenJoystick.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystick.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1320">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="391">
+              <caret line="314" column="1" selection-start-line="314" selection-start-column="1" selection-end-line="314" selection-end-column="1" />
+              <folding>
+                <element signature="e#931#961#0" expanded="false" />
+                <element signature="e#1080#1098#0" expanded="false" />
+                <element signature="e#1379#1404#0" expanded="false" />
+                <element signature="docComment;method#OnScreenJoystick#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#OnScreenJoystick#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="e#1656#1673#0" expanded="false" />
+                <element signature="docComment;method#initGraphics#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#initGraphics#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#initBounds#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#initBounds#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#setAutoCentering#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#isAutoCentering#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#setJoystickListener#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#setJoystickListener#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#surfaceChanged#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#surfaceChanged#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#surfaceCreated#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#surfaceCreated#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#surfaceDestroyed#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#surfaceDestroyed#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#doDraw#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#doDraw#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#onTouch#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#onTouch#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#checkBounds#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#checkBounds#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="docComment;method#pushTouchEvent#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#pushTouchEvent#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="e#7361#7384#0" expanded="false" />
+                <element signature="docComment;class#JoystickThread#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="class#JoystickThread#0;class#OnScreenJoystick#0" expanded="false" />
+                <element signature="method#start#0;class#JoystickThread#0;class#OnScreenJoystick#0" expanded="false" />
+                <marker date="1490612335333" expanded="false" signature="2496:2556" ph="/**...*/" />
+                <marker date="1490612335333" expanded="false" signature="2581:2870" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="940" column="0" selection-start-line="940" selection-start-column="0" selection-end-line="940" selection-end-column="0" />
+              <folding>
+                <element signature="e#1763#1792#0" expanded="false" />
+                <element signature="e#2672#2690#0" expanded="false" />
+                <element signature="e#4246#4275#0" expanded="false" />
+                <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#10253#10270#0" expanded="false" />
+                <element signature="docComment;method#initUI#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#initUI#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#initPreviewer#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#uninitPreviewer#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#onSurfaceTextureAvailable#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onSurfaceTextureAvailable#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#onSurfaceTextureDestroyed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onSurfaceTextureDestroyed#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onSurfaceTextureUpdated#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#showToast#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#showToast#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#onClick#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onClick#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#decollerAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#decollerAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#atterrirAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#atterrirAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#retourBaseAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#retourBaseAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#activerJoysticks#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#activerJoysticks#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#27525#27899#0" expanded="true" />
+                <element signature="e#27898#27899#0" expanded="true" />
+                <element signature="docComment;method#captureAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#captureAction#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#startRecord#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
+                <element signature="docComment;method#stopRecord#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#stopRecord#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#switchControl#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#31941#31964#0" expanded="false" />
+                <element signature="docComment;class#SendVirtualStickDataTask#0;class#MainActivity#0" expanded="false" />
+                <element signature="class#SendVirtualStickDataTask#0;class#MainActivity#0" expanded="false" />
+                <marker date="1490614197635" expanded="false" signature="10276:10352" ph="/**...*/" />
+                <marker date="1490614197635" expanded="false" signature="16974:17034" ph="/**...*/" />
+                <marker date="1490614197635" expanded="false" signature="17704:17753" ph="/**...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2081,7 +2232,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5961793450788" />
+        <entry key="G:\Work\PhantomPilot\PhantomPilot" value="5951075805578" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2351,71 +2502,71 @@
               <option name="name" value="app" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-base-services-groovy-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/ant-1.9.6.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-installation-beacon-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-base-services-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-base-services-groovy-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-cli-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-core-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/groovy-all-2.4.4.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-logging-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-docs-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-base-services-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-installation-beacon-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-jvm-services-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-launcher-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-logging-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-messaging-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-model-core-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-model-groovy-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-native-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-open-api-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-process-services-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-resources-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-messaging-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/ant-1.9.6.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-jvm-services-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-open-api-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-launcher-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-model-groovy-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-tooling-api-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-ui-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-wrapper-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-model-core-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-native-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/gradle-tooling-api-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-groovy-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-javascript-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/groovy-all-2.4.4.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-announce-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-antlr-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-build-comparison-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-build-init-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-code-quality-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-testing-base-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-dependency-management-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-diagnostics-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ear-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ide-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ide-native-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ide-play-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ivy-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-jacoco-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-javascript-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-jetty-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-groovy-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-java-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-jvm-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-native-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-scala-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-maven-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-osgi-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-base-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-jvm-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-native-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-play-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-plugin-development-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-plugin-use-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-plugins-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-diagnostics-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-reporting-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-play-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-native-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-jvm-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-resources-http-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-osgi-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-announce-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-sonar-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-build-init-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-jvm-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-publish-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-dependency-management-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ivy-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-plugin-development-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ide-native-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-signing-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-build-comparison-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ide-play-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-reporting-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-resources-http-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-resources-s3-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ear-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-native-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-jetty-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-tooling-api-builders-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-maven-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-testing-native-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-testing-jvm-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-jacoco-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-java-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-test-kit-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-resources-sftp-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-language-scala-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-platform-base-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-ide-2.14.1.jar" />
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-scala-2.14.1.jar" />
-                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-antlr-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-signing-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-sonar-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-test-kit-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-testing-base-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-testing-jvm-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-testing-native-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/gradle-tooling-api-builders-2.14.1.jar" />
+                  <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.14.1/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2432,15 +2583,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystickListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystick.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="27" />
-    <option name="width" value="1912" />
-    <option name="height" value="1053" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2467,10 +2623,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2487,28 +2639,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomPilot" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2529,27 +2659,18 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomPilot" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="d9676c69" />
-    <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin.version" value="2.2.2" />
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -2672,7 +2793,7 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+    <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -2738,21 +2859,21 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b472539c-6562-4d45-916a-e265734d0837" name="Default" comment="" />
-      <created>1490523047198</created>
+      <changelist id="08e212af-723d-4e3f-a462-fc3f9ed47f5c" name="Default" comment="" />
+      <created>1490608572148</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1490523047198</updated>
+      <updated>1490608572148</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1912" height="1053" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2765,13 +2886,13 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -2780,7 +2901,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2788,36 +2908,187 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystick.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1320">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_connection.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#599#628#0" expanded="false" />
+            <element signature="e#948#966#0" expanded="false" />
+            <element signature="e#1033#1063#0" expanded="false" />
+            <element signature="method#onCreate#0;class#ConnectionActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#ConnectionActivity#0" expanded="false" />
+            <element signature="e#3275#3292#0" expanded="false" />
+            <element signature="method#initUI#0;class#ConnectionActivity#0" expanded="false" />
+            <element signature="method#updateUI#0;class#ConnectionActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#ConnectionActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+          <folding>
+            <element signature="e#695#713#0" expanded="false" />
+            <element signature="docComment;field#mDJISDKManagerCallback#0;class#FPVDemoApplication#0" expanded="false" />
+            <element signature="class#1087:2666" expanded="false" />
+            <element signature="e#1472#1709#0" expanded="true" />
+            <element signature="e#1708#1709#0" expanded="true" />
+            <element signature="docComment;field#mDJIBaseProductListener#0;class#FPVDemoApplication#0" expanded="false" />
+            <element signature="class#2813:3357" expanded="false" />
+            <element signature="method#onComponentChange#0;class#2813:3357" expanded="false" />
+            <element signature="method#onProductConnectivityChanged#0;class#2813:3357" expanded="false" />
+            <element signature="docComment;field#mDJIComponentListener#0;class#FPVDemoApplication#0" expanded="false" />
+            <element signature="e#3694#3711#0" expanded="false" />
+            <element signature="e#7187#7364#0" expanded="true" />
+            <element signature="e#7363#7364#0" expanded="true" />
+            <element signature="e#7387#7416#0" expanded="false" />
+            <element signature="method#onCreate#0;class#FPVDemoApplication#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="548" column="40" selection-start-line="548" selection-start-column="40" selection-end-line="548" selection-end-column="40" />
+        <state relative-caret-position="272">
+          <caret line="940" column="0" selection-start-line="940" selection-start-column="0" selection-end-line="940" selection-end-column="0" />
           <folding>
-            <marker date="1490524839651" expanded="false" signature="13547:13683" ph="(OnScreenJoystickListener) (joystick, pX, pY) → {" />
-            <marker date="1490524839651" expanded="false" signature="14696:14832" ph="(OnScreenJoystickListener) (joystick, pX, pY) → {" />
+            <element signature="e#1763#1792#0" expanded="false" />
+            <element signature="e#2672#2690#0" expanded="false" />
+            <element signature="e#4246#4275#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10253#10270#0" expanded="false" />
+            <element signature="docComment;method#initUI#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#initUI#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#initPreviewer#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#uninitPreviewer#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onSurfaceTextureAvailable#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onSurfaceTextureAvailable#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onSurfaceTextureDestroyed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onSurfaceTextureDestroyed#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onSurfaceTextureUpdated#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#showToast#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showToast#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#decollerAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#decollerAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#atterrirAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#atterrirAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#retourBaseAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#retourBaseAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#activerJoysticks#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#activerJoysticks#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#27525#27899#0" expanded="true" />
+            <element signature="e#27898#27899#0" expanded="true" />
+            <element signature="docComment;method#captureAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#captureAction#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#startRecord#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#stopRecord#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#stopRecord#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#switchControl#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#31941#31964#0" expanded="false" />
+            <element signature="docComment;class#SendVirtualStickDataTask#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#SendVirtualStickDataTask#0;class#MainActivity#0" expanded="false" />
+            <marker date="1490614197635" expanded="false" signature="10276:10352" ph="/**...*/" />
+            <marker date="1490614197635" expanded="false" signature="16974:17034" ph="/**...*/" />
+            <marker date="1490614197635" expanded="false" signature="17704:17753" ph="/**...*/" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="314" column="1" selection-start-line="314" selection-start-column="1" selection-end-line="314" selection-end-column="1" />
+          <folding>
+            <element signature="e#931#961#0" expanded="false" />
+            <element signature="e#1080#1098#0" expanded="false" />
+            <element signature="e#1379#1404#0" expanded="false" />
+            <element signature="docComment;method#OnScreenJoystick#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#OnScreenJoystick#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="e#1656#1673#0" expanded="false" />
+            <element signature="docComment;method#initGraphics#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#initGraphics#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#initBounds#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#initBounds#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#setAutoCentering#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#isAutoCentering#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#setJoystickListener#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#setJoystickListener#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#surfaceChanged#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#surfaceChanged#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#surfaceCreated#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#surfaceCreated#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#surfaceDestroyed#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#surfaceDestroyed#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#doDraw#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#doDraw#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#onTouch#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#onTouch#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#checkBounds#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#checkBounds#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="docComment;method#pushTouchEvent#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#pushTouchEvent#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="e#7361#7384#0" expanded="false" />
+            <element signature="docComment;class#JoystickThread#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="class#JoystickThread#0;class#OnScreenJoystick#0" expanded="false" />
+            <element signature="method#start#0;class#JoystickThread#0;class#OnScreenJoystick#0" expanded="false" />
+            <marker date="1490612335333" expanded="false" signature="2496:2556" ph="/**...*/" />
+            <marker date="1490612335333" expanded="false" signature="2581:2870" ph="{...}" />
+          </folding>
+        </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="178" column="4" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/OnScreenJoystickListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
